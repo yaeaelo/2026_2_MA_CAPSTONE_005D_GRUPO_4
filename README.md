@@ -11,7 +11,7 @@ BeatsCloud es una plataforma web orientada a la publicación, búsqueda, compra 
 
 | Nombre Completo | Rol / Responsabilidad | Correo Electrónico | GitHub |
 | :--- | :--- | :--- | :--- |
-| Ismael Araya | Líder de Proyecto / Desarrollador Frontend / Desarrollador Backend | ismaelarayaceledon@gmail.com | @yaeaelo |
+| Ismael Araya | Líder de Proyecto / Desarrollador Frontend / Desarrollador Backend | ism.araya@duocuc.cl | @yaeaelo |
 | Felipe Urtubia |  Desarrollador Backend / Desarrollador Frontend | feli.urtubia@duocuc.cl | @felipeurtubia133 |
 | Vicente Monroy | Desarrollador Backend / Desarrollador Frontend | vi.monroy@duocuc.cl | @monroyvicente1 |
 
