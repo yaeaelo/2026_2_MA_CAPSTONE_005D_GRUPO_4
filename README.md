@@ -11,9 +11,9 @@ BeatsCloud es una plataforma web orientada a la publicación, búsqueda, compra 
 
 | Nombre Completo | Rol / Responsabilidad | Correo Electrónico | GitHub |
 | :--- | :--- | :--- | :--- |
-| Felipe Urtubia | Líder de Proyecto / Dev | feli.urtubia@duocuc.cl | @felipeurtubia133 |
-| Vicente Monroy | Desarrollador Backend | vi.monroy@duocuc.cl | @monroyvicente1 |
-| Ismael Araya | Desarrollador Frontend | ismaelarayaceledon@gmail.com | @yaeaelo |
+| Ismael Araya | Líder de Proyecto / Desarrollador Frontend / Desarrollador Backend | ismaelarayaceledon@gmail.com | @yaeaelo |
+| Felipe Urtubia |  Desarrollador Backend / Desarrollador Frontend | feli.urtubia@duocuc.cl | @felipeurtubia133 |
+| Vicente Monroy | Desarrollador Backend / Desarrollador Frontend | vi.monroy@duocuc.cl | @monroyvicente1 |
 
 ## 📁 Estructura del Repositorio
 La organización de carpetas y artefactos sigue la estructura definida para la sección 2026_2_MA_CAPSTONE_005D:
