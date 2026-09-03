@@ -19,7 +19,7 @@ BeatsCloud es una plataforma web orientada a la publicación, búsqueda, compra 
 La organización de carpetas y artefactos sigue la estructura definida para la sección 2026_2_MA_CAPSTONE_005D:
 
 ```text
-2026_2_MA_CAPSTONE_005D_GRUPO_X/
+2026_2_MA_CAPSTONE_005D_GRUPO_4/
 │
 ├── Fase 1/
 │   ├── Evidencias Grupales/     # Informes, propuestas, actas de reunión y entregables grupales de la Fase 1
@@ -58,8 +58,8 @@ La organización de carpetas y artefactos sigue la estructura definida para la s
 ## 🛠️ Requisitos e Instalación
 
 **Prerrequisitos**
-- Node.js v18.0+ (para el Frontend)
-- Python 3.10+ (para el Backend)
+- Node.js v18.0+ (Frontend)
+- Python 3.10+ (Backend)
 - PostgreSQL 14+
 - Git
 
@@ -67,8 +67,8 @@ La organización de carpetas y artefactos sigue la estructura definida para la s
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_X.git
-   cd 2026_2_MA_CAPSTONE_005D_GRUPO_X
+   git clone https://github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4.git
+   cd 2026_2_MA_CAPSTONE_005D_GRUPO_4
    ```
 2. Navegar a la carpeta del sistema:
    ```bash
@@ -82,4 +82,4 @@ La organización de carpetas y artefactos sigue la estructura definida para la s
    ```
 
 ## 📌 Notas Finales
-Proyecto elaborado como parte del proceso de la asignatura Capstone (2026_2_MA_CAPSTONE_005D_GRUPO_X).
+Proyecto elaborado como parte del proceso de la asignatura Capstone (2026_2_MA_CAPSTONE_005D_GRUPO_4).
