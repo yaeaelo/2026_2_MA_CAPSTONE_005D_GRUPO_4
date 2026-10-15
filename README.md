@@ -98,7 +98,3 @@ npm run dev
 ## 📌 Notas Finales
 
 Proyecto elaborado como parte del proceso de la asignatura Capstone (2026_2_MA_CAPSTONE_005D_GRUPO_4).
-
-```
-
-```
