@@ -1,0 +1,19 @@
+# Python / Django
+__pycache__/
+*.py[cod]
+*$py.class
+server/venv/
+venv/
+*.sqlite3
+server/media/canciones/
+*.log
+
+# Node / React
+client/node_modules/
+node_modules/
+client/dist/
+dist/
+.DS_Store
+
+# Entorno local
+.env.local
