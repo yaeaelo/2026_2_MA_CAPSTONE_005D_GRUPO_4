@@ -1,0 +1,13 @@
+Creating test database for alias 'default'...
+...............
+----------------------------------------------------------------------
+Ran 15 tests in 18.083s
+
+OK
+Destroying test database for alias 'default'...
+Found 22 test(s).
+System check identified no issues (0 silenced).
+Preview generado: Track antiguo sin preview
+Proceso terminado. Generados: 1. Errores: 0.
+
+Ejecutado sobre PostgreSQL en Docker el: jue 15 oct 2026 11:47:45 -03
