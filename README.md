@@ -19,13 +19,13 @@ Por ser un equipo de tres, los roles Scrum describen responsabilidades principal
 - [felipe-urtubia/BeatsCloud](https://github.com/felipe-urtubia/BeatsCloud): aplicación y documentación técnica del producto.
 - [yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4](https://github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4): entrega académica, documentos y evidencias.
 
-La copia identificable del producto está en `Fase 2/Evidencias Proyecto/Evidencias de sistema/BeatsCloud-5021ee8/`. Se generó desde `felipe-urtubia/BeatsCloud` commit `5021ee84ada9fbd8121362c676572b3a3e68d6d4`; consulte `SOURCE_COMMIT.txt` y `SHA256SUMS` en esa carpeta. Es un snapshot de fuentes, sin dependencias instaladas, builds, bases locales ni configuración privada.
+La copia vigente identificable del producto está en `Fase 2/Evidencias Proyecto/Evidencias de sistema/BeatsCloud-96918f4/`, snapshot exacto del commit `96918f43f147d46d5ae65746c988979c36854637` de BeatsCloud. El snapshot anterior `BeatsCloud-5021ee8/` se conserva como antecedente y tiene su propio `SOURCE_COMMIT.txt` y manifiesto. La copia actual contiene solo archivos rastreados, sin metadata Git ni configuración privada.
 
-El manifiesto cubre 292 archivos: 252 archivos de aplicación/configuración/recursos del inventario anterior (incluyen 50 módulos de prueba Django y 3 archivos de prueba frontend), el `README.md` raíz, 36 archivos bajo `docs/`, `REGISTRO_CAMBIOS_BEATSCLOUD.md` y los dos archivos de preparación Render añadidos en `5021ee8` (`.gitattributes` y `build.sh`). El inventario previo de 252 archivos de aplicación no contradice el total manifestado: este incluye documentación y configuración adicional. `SOURCE_COMMIT.txt` y `SHA256SUMS` son metadatos añadidos; no forman parte de los 292 archivos de origen. Los textos históricos pueden describir estados previos; esta entrega identifica su código con `5021ee8` y señala las pruebas anteriores como tales.
+El snapshot actual manifiesta 294 archivos de origen y contiene 296 archivos contando `SOURCE_COMMIT.txt` y `SHA256SUMS`. De los 294, 252 corresponden al inventario previo de aplicación/configuración/recursos y 42 son README, registro de cambios, 38 documentos bajo `docs/` y configuración/preparación de despliegue. La diferencia de dos archivos frente al snapshot anterior son `contribuciones_interrepositorios.md` y `validacion_qa_cierre_2026-11-19.md`, añadidos al repositorio de producto. Los 294 hashes se validan contra el SHA exacto; los dos metadatos académicos no forman parte del commit fuente. Se conservan los dos `.env.example`; no se incluyen `.env`, bases locales, dependencias instaladas, builds ni medios generados.
 
 ## Estado técnico al corte
 
-El snapshot corresponde a `5021ee8`; la matriz de autoría resume los historiales base de BeatsCloud `main` en ese SHA y del `main` académico `30d0cf0`. No cuenta los commits locales de consolidación documental de estas ramas de entrega.
+El snapshot vigente corresponde exactamente a `96918f43f147d46d5ae65746c988979c36854637`. La matriz de autoría de base conserva sus cortes históricos de BeatsCloud `5021ee8` y académico `30d0cf0`; no incluye los commits locales de consolidación posteriores. El commit `5021ee8` de Felipe sigue siendo la preparación Render dentro del historial fuente.
 
 La aplicación integra React, TypeScript y Vite en `frontend/client/`, un backend Django con API JSON propia y PostgreSQL. La autenticación usa sesiones y CSRF. Webpay Plus está integrado con Transbank; las pruebas automatizadas usan dobles y no acreditan transacciones reales. El almacenamiento admite archivos locales y una integración opcional con Cloudflare R2, desactivada en la configuración de ejemplo. Hay previews de audio y rutas protegidas para descargas. El código vigente no utiliza DRF ni JWT. El commit de corte agrega preparación Render (`STATIC_ROOT`, WhiteNoise, Gunicorn y `build.sh`), pero no hay evidencia de que el build o un despliegue se hayan ejecutado.
 
@@ -60,7 +60,7 @@ En otra terminal: `cd frontend/client`, `npm ci`, `cp .env.example .env` y ejecu
 
 ## Pruebas y alcance conocido
 
-La evidencia QA disponible registra 372 pruebas Django, 26 pruebas frontend, TypeScript/lint, build y comprobaciones HTTP locales ejecutadas antes de `5021ee8`, sobre el corte `f017627`. `5021ee8` añade preparación de despliegue (WhiteNoise, estáticos, Gunicorn y `build.sh`), que no se probó después de integrarse. Son validaciones automatizadas y smoke checks, no una prueba manual E2E. Firefox manual, compra/descarga E2E, Webpay real, R2 real, SMTP real y despliegue externo permanecen pendientes. Vicente reportó QA en curso; su registro no contiene resultados aprobados.
+El cierre del 19-11-2026 ejecutó en el código de producto y entorno QA local 372 pruebas Django, 26 pruebas frontend, TypeScript/lint, build Vite, smoke HTTP de frontend/sesión/catálogo y `bash build.sh` con `collectstatic` y migraciones dirigidos a la DB QA aislada. El detalle y SHA de ejecución están en el [registro de cierre](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentación/validacion_qa_cierre_2026-11-19.md). Son validaciones automatizadas y smoke checks, no una prueba manual E2E. Firefox manual, compra/descarga E2E, Webpay real, R2 real, SMTP real y despliegue externo permanecen pendientes. La ejecución automatizada de cierre no se atribuye a Vicente; los casos diseñados por él mantienen esa autoría y el registro manual continúa abierto.
 
 ## Evidencias de entrega
 
@@ -71,6 +71,9 @@ La evidencia QA disponible registra 372 pruebas Django, 26 pruebas frontend, Typ
 - [Trazabilidad de los historiales base (112 commits; correos protegidos por hash)](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_autoria_commits.csv).
 - [Matriz de aportes externos y WhatsApp](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_contribuciones_externas.md).
 - [Estado del documento E2E de Vicente](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/registro_evidencia_e2e_vicente.md).
+- [Matriz de cierre funcional: implementación, pruebas, documentación y estado](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_cierre_funcional_2026-11-19.md).
+- [Paquete de contenido técnico validado para Claude](Fase%202/Evidencias%20Grupales/Paquete_Contenido_Validado_Claude_2026-11-19.md).
+- [Ejecución QA de cierre 19-11](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/validacion_qa_cierre_2026-11-19.md).
 - Desarrollo y evidencias grupales/individuales existentes en las carpetas de Fase 1 y Fase 2.
 - [Trazabilidad técnica de contribuciones](https://github.com/felipe-urtubia/BeatsCloud/blob/main/docs/entrega-apt/trazabilidad_tecnica.md).
 - [Matriz interrepositorios de contribuciones](https://github.com/felipe-urtubia/BeatsCloud/blob/main/docs/entrega-apt/contribuciones_interrepositorios.md).
