@@ -1,0 +1,5 @@
+# Código fuente oficial
+
+Esta carpeta contiene una copia de los 290 archivos rastreados en `felipe-urtubia/BeatsCloud`, rama `main`, commit `f017627fec99b2628e7753d3626ed33367836c5c` (corte 18-11-2026), en `BeatsCloud-f017627/`. Incluye el código, configuración de ejemplo, pruebas, README, documentación y registro de cambios del commit. `SOURCE_COMMIT.txt` identifica el origen y `SHA256SUMS` permite comprobar cada archivo. Los 290 hashes coinciden con el commit fuente. No había `.env`, bases locales, `node_modules`, entornos virtuales, builds, medios locales ni contenedores `agregar.html` rastreados en ese commit. La carpeta no copia `.git` ni archivos locales/ignorados que existan fuera del árbol rastreado. Conserva `.env.example` como plantilla, byte por byte igual a la fuente.
+
+No contiene una segunda implementación: el frontend vigente está en `frontend/client/` y el backend Django en `app/` y `beatcloud/`, igual que en el repositorio de producto. La fuente de verdad es `felipe-urtubia/BeatsCloud`.
