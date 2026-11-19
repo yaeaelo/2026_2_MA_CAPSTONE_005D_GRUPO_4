@@ -12,7 +12,7 @@ BeatsCloud es un marketplace académico de instrumentales. Productores publican 
 | Felipe Urtubia | Product Owner | Backend, pagos y almacenamiento |
 | Vicente Monroy | QA / Development Team | Pruebas, evidencias y apoyo al desarrollo |
 
-Por ser un equipo de tres, los roles Scrum describen responsabilidades principales y no son excluyentes. La atribución se basa en cambios y evidencias verificables, no en conteos brutos de commits.
+Por ser un equipo de tres, los roles Scrum describen responsabilidades principales y no son excluyentes. La propuesta inicial del 03-09 describió a todos como multidisciplinarios; la especialización técnica se concretó progresivamente durante los sprints. La atribución se basa en cambios/evidencias, no en conteos brutos.
 
 ## Repositorios oficiales
 
@@ -64,7 +64,11 @@ La evidencia técnica del corte registra 372 pruebas Django, 26 pruebas frontend
 
 - [Informe final en revisión (Markdown)](Fase%202/Evidencias%20Grupales/2.6_Informe_Final_Proyecto_APT_2026-11-18.md) y [versión DOCX](Fase%202/Evidencias%20Grupales/2.6_Informe_Final_Proyecto_APT_2026-11-18.docx).
 - Presentación de entrega: `Fase 2/Evidencias Grupales/Presentación_Final_BeatsCloud_2026-11-18.pptx`.
+- [Guion de defensa de 15 minutos + 5 minutos de preguntas](Fase%202/Evidencias%20Grupales/Guion_Defensa_Final_2026-11-19.md).
 - Presentación histórica de avance (15-10-2026), conservada y rotulada como avance.
+- [Trazabilidad de commits (111 filas, correos protegidos por hash)](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_autoria_commits.csv).
+- [Matriz de aportes externos y WhatsApp](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_contribuciones_externas.md).
+- [Estado del documento E2E de Vicente](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/registro_evidencia_e2e_vicente.md).
 - Desarrollo y evidencias grupales/individuales existentes en las carpetas de Fase 1 y Fase 2.
 - [Trazabilidad técnica de contribuciones](https://github.com/felipe-urtubia/BeatsCloud/blob/main/docs/entrega-apt/trazabilidad_tecnica.md).
 - [Matriz interrepositorios de contribuciones](https://github.com/felipe-urtubia/BeatsCloud/blob/main/docs/entrega-apt/contribuciones_interrepositorios.md).
