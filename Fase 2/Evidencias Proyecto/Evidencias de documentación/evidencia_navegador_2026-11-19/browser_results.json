@@ -1,0 +1,59 @@
+{
+  "product_sha": "ee981a750904b4263b20be2f91e3568c0e1699ea",
+  "browser": "160.0",
+  "case1": {
+    "baseline_items": 2,
+    "baseline_subtotal": 4811,
+    "status": "passed",
+    "track_id": 125,
+    "synthetic_track_title": "Ámbar Cristal de la Estación",
+    "added_track_price_clp": 22922,
+    "items_after_add": 3,
+    "subtotal_after_add": 27733,
+    "iva_after_add": 5269,
+    "total_after_add": 33002,
+    "expected_subtotal": 27733,
+    "server_subtotal_matches": true,
+    "ui_shows_added_track": true,
+    "ui_totals_excerpt": [
+      "Subtotal (3 productos):",
+      "IVA (19%):"
+    ],
+    "cleanup_added_track_only": true,
+    "baseline_restored": true
+  },
+  "case2": {
+    "status": "blocked",
+    "review_modal_opened": true,
+    "webpay_opened": false,
+    "reason": "No se dispone de credenciales/servicio Webpay TEST autorizado. Se detuvo antes del botón de inicio de pago."
+  },
+  "case3": {
+    "status": "blocked",
+    "return_attempted": false,
+    "reason": "Sin una operación Webpay TEST iniciada/autorizada no existe retorno del proveedor que pueda verificarse."
+  },
+  "case4": {
+    "status": "blocked",
+    "purchase_download_attempted": false,
+    "reason": "No existe compra pagada en el entorno y no se autorizó crear/forzar una compra. No se intentó descargar audio.",
+    "page_excerpt": [
+      "TIPOS DE AUDIO",
+      "Archivos Comprados",
+      "Comprobantes de compra",
+      "Comprador QA con carrito",
+      "Comprador QA con carrito",
+      "@qa-comprador-carrito",
+      "Comprador QA con carrito",
+      "Cuenta local de pruebas QA: Comprador QA con carrito.",
+      "PISTAS COMPRADAS",
+      "BIBLIOTECA & DESCARGAS (0)",
+      "Las compras registradas aparecen aquí. La descarga depende de que el archivo siga disponible."
+    ]
+  },
+  "http": {
+    "catalog": 200,
+    "cart_initial": 200,
+    "cart_after_add": 200
+  }
+}

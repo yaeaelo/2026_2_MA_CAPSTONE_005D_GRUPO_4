@@ -1,5 +1,0 @@
-Repository: felipe-urtubia/BeatsCloud
-Branch: main
-Commit: 5021ee84ada9fbd8121362c676572b3a3e68d6d4
-Cut: 2026-11-19
-This is an exact source snapshot without Git metadata. See SHA256SUMS for included-file checksums.

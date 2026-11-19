@@ -1,5 +1,0 @@
-Repository: felipe-urtubia/BeatsCloud
-Ref: closure/2026-11-19 (prepared for main fast-forward)
-Commit: 96918f43f147d46d5ae65746c988979c36854637
-Cut: 2026-11-19
-This snapshot contains the tracked tree only and no Git metadata. SHA256SUMS excludes this file and itself.

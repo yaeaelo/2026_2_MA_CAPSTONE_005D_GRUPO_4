@@ -1,6 +1,5 @@
 Repository: felipe-urtubia/BeatsCloud
-Ref: closure/2026-11-19 (prepared for main fast-forward)
-Commit: ee981a750904b4263b20be2f91e3568c0e1699ea
-Cut: 2026-11-19
+Validated code/test cut: ee981a750904b4263b20be2f91e3568c0e1699ea
+Latest product main at delivery: d87bde1117b58806b295ccf56655f5cbd37beb17
 
-This snapshot contains the complete tracked Git tree, extracted from Git objects without export-ignore filtering and without Git metadata. SHA256SUMS excludes this file and itself.
+The application code, tests, migrations, and runtime configuration are based on the validated cut. The only subsequent product-code change through d87bde1 is app/migrations/0028_seed_generos_musicales.py, included here; it seeds nine initial music genres. Technical documentation was consolidated for the academic handoff. This is a curated source snapshot, not a byte-for-byte export of every tracked repository file. QA results in the report refer to their recorded SHAs and were not rerun on d87bde1. SHA256SUMS covers retained files except this provenance file and the manifest itself.

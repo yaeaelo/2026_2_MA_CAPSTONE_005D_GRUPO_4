@@ -1,0 +1,12 @@
+Evidencia HTTP resumida — BeatsCloud QA
+Producto: ee981a750904b4263b20be2f91e3568c0e1699ea
+Entorno: local aislado, Firefox headless/Selenium, 2026-11-19
+
+GET /api/session/       HTTP 200 (smoke inicial)
+GET /api/catalogo/      HTTP 200
+GET /api/carrito/       HTTP 200 (sesión autenticada; inicial)
+GET /api/carrito/       HTTP 200 (después de añadir pista sintética)
+GET /api/carrito/       HTTP 200 (tras retirar solo la pista añadida)
+
+No se guardaron cookies, tokens, cabeceras de autorización ni cuerpos sensibles.
+No se inició POST de pago ni hubo llamadas al Webpay TEST.
