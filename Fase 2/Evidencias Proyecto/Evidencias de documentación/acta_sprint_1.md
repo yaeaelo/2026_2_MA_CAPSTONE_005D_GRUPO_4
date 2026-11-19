@@ -1,4 +1,4 @@
-> **Nota de cierre, 18-11-2026:** esta acta conserva las afirmaciones y acuerdos registrados para el Sprint 1 (15-10-2026); no describe el stack actual ni certifica el estado final. La referencia histórica a Django REST Framework no coincide con BeatsCloud `main` en `f017627fec99b2628e7753d3626ed33367836c5c`, cuyo API es Django propio sin DRF/JWT. Los endpoints y estados de esta acta tampoco deben tomarse como rutas o resultados vigentes sin verificar el código de corte.
+> **Nota de cierre, 18-11-2026:** esta acta conserva las afirmaciones y acuerdos registrados para el Sprint 1 (15-10-2026); no describe el stack actual ni certifica el estado final. La referencia histórica a Django REST Framework no coincide con BeatsCloud `main` en `5021ee84ada9fbd8121362c676572b3a3e68d6d4`, cuyo API es Django propio sin DRF/JWT. Los endpoints y estados de esta acta tampoco deben tomarse como rutas o resultados vigentes sin verificar el código de corte.
 
 # Acta de Cierre de Sprint 1 - BeatsCloud
 **Fecha:** Jueves 15 de Octubre de 2026  

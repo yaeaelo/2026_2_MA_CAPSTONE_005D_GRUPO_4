@@ -1,7 +1,7 @@
 # Guion sugerido de defensa — BeatsCloud
 
 **Máximo:** 15 minutos de exposición + 5 minutos de preguntas.
-**Corte de evidencia:** `felipe-urtubia/BeatsCloud/main` en `f017627fec99b2628e7753d3626ed33367836c5c`.
+**Corte de evidencia:** `felipe-urtubia/BeatsCloud/main` en `5021ee84ada9fbd8121362c676572b3a3e68d6d4`.
 **Este guion distribuye turnos por responsabilidad; cada integrante debe revisar las respuestas y reemplazar cualquier texto que no refleje su experiencia.**
 
 ## Cronograma de exposición (13–14 minutos)

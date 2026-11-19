@@ -2,7 +2,7 @@
 
 ## Proyecto
 
-BeatsCloud es un marketplace académico de instrumentales. Productores publican pistas y artistas pueden explorar el catálogo, escuchar previsualizaciones y adquirir acceso a descargas protegidas. La entrega documenta el producto y la evidencia académica disponible al corte del 18 de noviembre de 2026.
+BeatsCloud es un marketplace académico de instrumentales. Productores publican pistas y artistas pueden explorar el catálogo, escuchar previsualizaciones y adquirir acceso a descargas protegidas. La entrega documenta el producto y la evidencia académica disponible al corte del 19 de noviembre de 2026.
 
 ## Equipo y responsabilidades
 
@@ -19,13 +19,15 @@ Por ser un equipo de tres, los roles Scrum describen responsabilidades principal
 - [felipe-urtubia/BeatsCloud](https://github.com/felipe-urtubia/BeatsCloud): aplicación y documentación técnica del producto.
 - [yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4](https://github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4): entrega académica, documentos y evidencias.
 
-La copia identificable del producto está en `Fase 2/Evidencias Proyecto/Evidencias de sistema/BeatsCloud-f017627/`. Se generó desde `felipe-urtubia/BeatsCloud` commit `f017627fec99b2628e7753d3626ed33367836c5c`; consulte `SOURCE_COMMIT.txt` y `SHA256SUMS` en esa carpeta. Es un snapshot de fuentes, sin dependencias instaladas, builds, bases locales ni configuración privada.
+La copia identificable del producto está en `Fase 2/Evidencias Proyecto/Evidencias de sistema/BeatsCloud-5021ee8/`. Se generó desde `felipe-urtubia/BeatsCloud` commit `5021ee84ada9fbd8121362c676572b3a3e68d6d4`; consulte `SOURCE_COMMIT.txt` y `SHA256SUMS` en esa carpeta. Es un snapshot de fuentes, sin dependencias instaladas, builds, bases locales ni configuración privada.
 
-El manifiesto cubre 290 archivos: 252 archivos de aplicación/configuración/recursos del inventario anterior (incluyen 50 módulos de prueba Django y 3 archivos de prueba frontend), el `README.md` raíz, 36 archivos bajo `docs/` y `REGISTRO_CAMBIOS_BEATSCLOUD.md`. Por eso el inventario previo de 252 archivos de aplicación no contradice el total actual: este añade README, documentación y registro de cambios. `SOURCE_COMMIT.txt` y `SHA256SUMS` son dos metadatos añadidos para identificar y comprobar la copia; no forman parte de esos 290 archivos ni del commit de origen. Los textos históricos dentro del snapshot pueden mencionar herramientas, rutas o estados anteriores; la arquitectura vigente para esta entrega es la descrita arriba y en los documentos técnicos fechados al 18-11.
+El manifiesto cubre 292 archivos: 252 archivos de aplicación/configuración/recursos del inventario anterior (incluyen 50 módulos de prueba Django y 3 archivos de prueba frontend), el `README.md` raíz, 36 archivos bajo `docs/`, `REGISTRO_CAMBIOS_BEATSCLOUD.md` y los dos archivos de preparación Render añadidos en `5021ee8` (`.gitattributes` y `build.sh`). El inventario previo de 252 archivos de aplicación no contradice el total manifestado: este incluye documentación y configuración adicional. `SOURCE_COMMIT.txt` y `SHA256SUMS` son metadatos añadidos; no forman parte de los 292 archivos de origen. Los textos históricos pueden describir estados previos; esta entrega identifica su código con `5021ee8` y señala las pruebas anteriores como tales.
 
 ## Estado técnico al corte
 
-La aplicación integra React, TypeScript y Vite en `frontend/client/`, un backend Django con API JSON propia y PostgreSQL. La autenticación usa sesiones y CSRF. Webpay Plus está integrado con Transbank; las pruebas automatizadas usan dobles y no acreditan transacciones reales. El almacenamiento admite archivos locales y una integración opcional con Cloudflare R2, desactivada en la configuración de ejemplo. Hay previews de audio y rutas protegidas para descargas. El código vigente no utiliza DRF ni JWT.
+El snapshot corresponde a `5021ee8`; la matriz de autoría resume los historiales base de BeatsCloud `main` en ese SHA y del `main` académico `30d0cf0`. No cuenta los commits locales de consolidación documental de estas ramas de entrega.
+
+La aplicación integra React, TypeScript y Vite en `frontend/client/`, un backend Django con API JSON propia y PostgreSQL. La autenticación usa sesiones y CSRF. Webpay Plus está integrado con Transbank; las pruebas automatizadas usan dobles y no acreditan transacciones reales. El almacenamiento admite archivos locales y una integración opcional con Cloudflare R2, desactivada en la configuración de ejemplo. Hay previews de audio y rutas protegidas para descargas. El código vigente no utiliza DRF ni JWT. El commit de corte agrega preparación Render (`STATIC_ROOT`, WhiteNoise, Gunicorn y `build.sh`), pero no hay evidencia de que el build o un despliegue se hayan ejecutado.
 
 ## Ejecución local del producto
 
@@ -58,7 +60,7 @@ En otra terminal: `cd frontend/client`, `npm ci`, `cp .env.example .env` y ejecu
 
 ## Pruebas y alcance conocido
 
-La evidencia técnica del corte registra 372 pruebas Django, 26 pruebas frontend, TypeScript/lint, build y comprobaciones HTTP locales. Son validaciones automatizadas y smoke checks, no una prueba manual E2E. La validación manual completa en Firefox, compra y descarga E2E, Webpay real, R2 real, SMTP real y despliegue externo quedan pendientes de evidencia. Vicente está realizando QA según el estado informado; su registro permanece abierto y no contiene resultados futuros anticipados.
+La evidencia QA disponible registra 372 pruebas Django, 26 pruebas frontend, TypeScript/lint, build y comprobaciones HTTP locales ejecutadas antes de `5021ee8`, sobre el corte `f017627`. `5021ee8` añade preparación de despliegue (WhiteNoise, estáticos, Gunicorn y `build.sh`), que no se probó después de integrarse. Son validaciones automatizadas y smoke checks, no una prueba manual E2E. Firefox manual, compra/descarga E2E, Webpay real, R2 real, SMTP real y despliegue externo permanecen pendientes. Vicente reportó QA en curso; su registro no contiene resultados aprobados.
 
 ## Evidencias de entrega
 
@@ -66,7 +68,7 @@ La evidencia técnica del corte registra 372 pruebas Django, 26 pruebas frontend
 - Presentación de entrega: `Fase 2/Evidencias Grupales/Presentación_Final_BeatsCloud_2026-11-18.pptx`.
 - [Guion de defensa de 15 minutos + 5 minutos de preguntas](Fase%202/Evidencias%20Grupales/Guion_Defensa_Final_2026-11-19.md).
 - Presentación histórica de avance (15-10-2026), conservada y rotulada como avance.
-- [Trazabilidad de commits (111 filas, correos protegidos por hash)](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_autoria_commits.csv).
+- [Trazabilidad de los historiales base (112 commits; correos protegidos por hash)](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_autoria_commits.csv).
 - [Matriz de aportes externos y WhatsApp](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_contribuciones_externas.md).
 - [Estado del documento E2E de Vicente](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/registro_evidencia_e2e_vicente.md).
 - Desarrollo y evidencias grupales/individuales existentes en las carpetas de Fase 1 y Fase 2.
