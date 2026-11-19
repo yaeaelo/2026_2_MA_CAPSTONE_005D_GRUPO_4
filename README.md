@@ -1,36 +1,79 @@
-# Capstone — BeatsCloud
+# Proyecto Capstone: BeatsCloud
 
-BeatsCloud es una plataforma web académica que conecta productores musicales y artistas mediante catálogo de instrumentales, perfiles, previsualizaciones y preparación de compra con acceso protegido a archivos. Este repositorio contiene la entrega académica y evidencia del producto al corte del **19 de noviembre de 2026**.
+**Asignatura / sección:** 2026_2_MA_CAPSTONE_005D
 
-## Equipo
+**Grupo:** GRUPO_4
 
-- Ismael Araya
-- Felipe Urtubia
-- Vicente Monroy
+**Institución:** Duoc UC
 
-Docente indicado en la presentación: **Fabián Álvarez Montenegro**, verificado en la pauta académica oficial y los documentos de curso disponibles.
+**Docente:** Fabián Álvarez Montenegro
 
-## Entregables de defensa
+## Descripción del proyecto
 
-- [Informe final (DOCX)](Fase%202/Evidencias%20Grupales/Informe_Final_BeatsCloud.docx) · [fuente Markdown](Fase%202/Evidencias%20Grupales/Informe_Final_BeatsCloud.md)
+BeatsCloud es una plataforma web académica que conecta productores musicales con artistas. Permite publicar y explorar instrumentales, escuchar previsualizaciones y gestionar el acceso protegido a archivos y compras.
+
+## Equipo de trabajo
+
+| Nombre | Rol / responsabilidad | Correo electrónico | GitHub |
+|---|---|---|---|
+| Ismael Araya | Scrum Master / Desarrollador frontend / UI-UX | ism.araya@duocuc.cl | [@yaeaelo](https://github.com/yaeaelo) |
+| Felipe Urtubia | Product Owner / Desarrollador backend | feli.urtubia@duocuc.cl | @felipeurtubia133 |
+| Vicente Monroy | Aseguramiento de Calidad (QA) / Evidencias | vi.monroy@duocuc.cl | [@monroyvicente1](https://github.com/monroyvicente1) |
+
+## Estructura del repositorio
+
+```text
+2026_2_MA_CAPSTONE_005D_GRUPO_4/
+├── Fase 1/
+│   ├── Evidencias Grupales/
+│   └── Evidencias Individuales/
+├── Fase 2/
+│   ├── Evidencias Grupales/
+│   │   ├── Informe_Final_BeatsCloud.docx
+│   │   ├── Presentacion_Final_BeatsCloud.pptx
+│   │   ├── Guion_Defensa_Final_BeatsCloud.docx
+│   │   └── Retrospectivas/
+│   ├── Evidencias Individuales/
+│   └── Evidencias Proyecto/
+│       ├── Evidencias de documentación/
+│       └── Evidencias de sistema/
+│           └── BeatsCloud-ee981a7/
+└── Fase 3/
+    ├── Evidencias Grupales/
+    └── Evidencias Individuales/
+```
+
+Las carpetas de Fase 3 se mantienen vacías como estructura de entrega.
+
+## Repositorios del proyecto
+
+- **Sistema BeatsCloud:** [github.com/felipe-urtubia/BeatsCloud](https://github.com/felipe-urtubia/BeatsCloud)
+- **Entrega académica:** [github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4](https://github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4)
+
+## Entregables finales
+
+- [Informe final (DOCX)](Fase%202/Evidencias%20Grupales/Informe_Final_BeatsCloud.docx)
 - [Presentación final (PPTX)](Fase%202/Evidencias%20Grupales/Presentacion_Final_BeatsCloud.pptx)
-- [Guion de defensa (DOCX)](Fase%202/Evidencias%20Grupales/Guion_Defensa_Final_BeatsCloud.docx) · [fuente Markdown](Fase%202/Evidencias%20Grupales/Guion_Defensa_Final_BeatsCloud.md)
+- [Guion de defensa (DOCX)](Fase%202/Evidencias%20Grupales/Guion_Defensa_Final_BeatsCloud.docx)
+- [Documentación y evidencias de QA](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentación/validacion_qa_cierre_2026-11-19.md)
 
-La presentación está planificada para unos 15 minutos de exposición y 5 minutos de preguntas. El guion sigue el orden de sus 13 diapositivas.
+La exposición considera aproximadamente 15 minutos y 5 minutos de preguntas. El guion sigue las 13 diapositivas de la presentación.
 
-## Producto y evidencia
+## Tecnologías
 
-- [Corte de código documentado](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20sistema/BeatsCloud-ee981a7/): corte probado `ee981a750904b4263b20be2f91e3568c0e1699ea` más la migración de géneros `0028` de `d87bde1117b58806b295ccf56655f5cbd37beb17`; los resultados QA se atribuyen al SHA indicado en cada evidencia. Procedencia y hashes: `SOURCE_COMMIT.txt` y `SHA256SUMS`.
-- En el SHA integrado se aprobaron 372 pruebas Django, 26 pruebas frontend, checks, migraciones, TypeScript, lint y build Vite. El detalle y el entorno aislado constan en el [registro QA de cierre](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentación/validacion_qa_cierre_2026-11-19.md).
-- El [anexo de navegador](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentación/evidencia_navegador_2026-11-19/README.md) documenta la ejecución Selenium de catálogo/carrito, sin presentarla como prueba manual.
-- El [informe](Fase%202/Evidencias%20Grupales/Informe_Final_BeatsCloud.md) y los [documentos técnicos](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20sistema/BeatsCloud-ee981a7/docs/entrega-apt/README.md) distinguen código implementado, validaciones del equipo y servicios externos no validados.
+- **Frontend:** React, TypeScript, Vite y Tailwind CSS.
+- **Backend:** Python y Django; API JSON propia implementada en `app/api_shim.py`.
+- **Persistencia:** PostgreSQL mediante modelos y migraciones Django.
+- **Autenticación:** sesiones Django, cookies y protección CSRF.
+- **Pagos:** integración Webpay Plus de Transbank; las pruebas automatizadas no acreditan una compra real de extremo a extremo.
+- **Archivos:** almacenamiento local e integración opcional con Cloudflare R2; la validación contra un bucket real no está acreditada.
 
-## Estructura
+## Instalación y ejecución
 
-- `Fase 1/`: pauta y evidencias originales de inicio.
-- `Fase 2/Evidencias Grupales/`: informe, presentación, guion, retrospectivas y matrices de seguimiento.
-- `Fase 2/Evidencias Individuales/`: diarios y autoevaluaciones originales del equipo.
-- `Fase 2/Evidencias Proyecto/Evidencias de documentación/`: trazabilidad, QA y evidencias de pruebas.
-- `Fase 2/Evidencias Proyecto/Evidencias de sistema/`: corte de código documentado del repositorio de producto.
+El repositorio académico contiene los entregables y una copia de referencia del código. Para preparar y ejecutar el sistema, clona el [repositorio BeatsCloud](https://github.com/felipe-urtubia/BeatsCloud) y sigue su [README de instalación](https://github.com/felipe-urtubia/BeatsCloud#readme), que describe requisitos, `.env.example`, PostgreSQL, backend, frontend y pruebas.
 
-La copia del producto conserva el corte fuente; los resultados QA posteriores se citan por sus SHA de ejecución en el registro académico. No se incluyen `.env`, `.env.qa`, credenciales, ZIP ni bases de datos locales.
+No publiques `.env`, credenciales ni secretos. Usa las plantillas `.env.example` y configura los valores sensibles solo en el entorno local.
+
+## QA documentado
+
+En el corte `ee981a750904b4263b20be2f91e3568c0e1699ea` se reportaron 372 pruebas Django y 26 pruebas frontend aprobadas, además de checks, migraciones, TypeScript, lint y build Vite. Los resultados de Selenium corresponden a automatización de navegador, no a una prueba manual. La copia académica incluye la migración posterior `0028_seed_generos_musicales.py` de `d87bde1117b58806b295ccf56655f5cbd37beb17`; esa migración no formó parte de la ejecución QA indicada. El informe y el registro de QA detallan el alcance y los cortes de cada resultado.
