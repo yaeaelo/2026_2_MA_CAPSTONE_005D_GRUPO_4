@@ -1,3 +1,5 @@
+> **Nota de cierre, 18-11-2026:** las cifras siguientes son declaraciones del informe de medición del 15-10-2026, no mediciones repetidas en el corte final. No se localizaron datos crudos para reproducir tiempos/transacciones. Las rutas mencionadas corresponden al diseño/entorno histórico y no coinciden todas con la API actual; el estado de R2 que aquí se registra es el de octubre, aunque el código actual incluye una integración opcional que no fue validada contra un bucket real.
+
 # Informe de Medición de Indicadores de Calidad - Fase 2
 **Proyecto:** BeatsCloud (Grupo 004)  
 **Fecha de Medición:** Jueves 15 de Octubre de 2026  

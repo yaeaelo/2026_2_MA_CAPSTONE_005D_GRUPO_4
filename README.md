@@ -1,194 +1,74 @@
-# BeatsCloud
+# Capstone — BeatsCloud
 
-**Asignatura / sección:** 2026_2_MA_CAPSTONE_005D  
-**Grupo:** GRUPO_4 (Grupo 004)  
-**Institución:** DUOC UC, sede Maipú  
-**Docente:** Fabián Álvarez Montenegro  
-**Última actualización:** 29 de octubre de 2026 (Sprint 2 en curso)
+## Proyecto
 
-## Descripción
+BeatsCloud es un marketplace académico de instrumentales. Productores publican pistas y artistas pueden explorar el catálogo, escuchar previsualizaciones y adquirir acceso a descargas protegidas. La entrega documenta el producto y la evidencia académica disponible al corte del 18 de noviembre de 2026.
 
-BeatsCloud es una plataforma web donde los productores musicales publican y venden instrumentales, y los artistas las buscan, escuchan, compran y descargan de forma segura. Busca facilitar el comercio musical a artistas emergentes del mercado local, con pagos en Chile mediante Webpay Plus, en lugar de depender de plataformas extranjeras.
+## Equipo y responsabilidades
 
-Los archivos de audio se protegen así: el público solo escucha una muestra automática de 30 segundos, y el archivo original se libera únicamente después de una transacción autorizada por Transbank.
+| Integrante | Rol Scrum | Desarrollo en la práctica |
+|---|---|---|
+| Ismael Araya | Scrum Master | UI/UX, frontend e integración |
+| Felipe Urtubia | Product Owner | Backend, pagos y almacenamiento |
+| Vicente Monroy | QA / Development Team | Pruebas, evidencias y apoyo al desarrollo |
 
-## Equipo
+Por ser un equipo de tres, los roles Scrum describen responsabilidades principales y no son excluyentes. La atribución se basa en cambios y evidencias verificables, no en conteos brutos de commits.
 
-| Nombre | Rol Scrum | Desarrollo en la práctica | Correo | GitHub |
-| :--- | :--- | :--- | :--- | :--- |
-| Ismael Araya | Scrum Master | UI/UX y frontend | ism.araya@duocuc.cl | @yaeaelo |
-| Felipe Urtubia | Product Owner | Backend, pagos y almacenamiento | feli.urtubia@duocuc.cl | @felipeurtubia133 |
-| Vicente Monroy | QA y Development Team | Pruebas, evidencias y apoyo donde falte | vi.monroy@duocuc.cl | @monroyvicente1 |
+## Repositorios oficiales
 
-El equipo es de tres personas, así que los roles no son rígidos: cada uno apoya donde se necesite. En el plan de trabajo de la Fase 1 los roles técnicos de Ismael y Felipe estaban al revés (Ismael en backend, Felipe en frontend). Se ajustaron al cambiar a Scrum y quedaron como indica la tabla.
+- [felipe-urtubia/BeatsCloud](https://github.com/felipe-urtubia/BeatsCloud): aplicación y documentación técnica del producto.
+- [yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4](https://github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4): entrega académica, documentos y evidencias.
 
-## Repositorios
+La copia identificable del producto está en `Fase 2/Evidencias Proyecto/Evidencias de sistema/BeatsCloud-f017627/`. Se generó desde `felipe-urtubia/BeatsCloud` commit `f017627fec99b2628e7753d3626ed33367836c5c`; consulte `SOURCE_COMMIT.txt` y `SHA256SUMS` en esa carpeta. Es un snapshot de fuentes, sin dependencias instaladas, builds, bases locales ni configuración privada.
 
-| Repositorio | Para qué sirve |
-| :--- | :--- |
-| `yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4` (este) | Entrega académica: evidencias, documentación y una copia del sistema en `Evidencias de sistema` |
-| `yaeaelo/CAPSTONE_FRONT` | Repositorio de trabajo del frontend (React). Incluye `docs/INTEGRACION_BACKEND.md`, con el registro de decisiones técnicas D1 a D12 |
-| `felipe-urtubia/BeatsCloud` | Repositorio de trabajo del backend (Django) |
+El manifiesto cubre 290 archivos: 252 archivos de aplicación/configuración/recursos del inventario anterior (incluyen 50 módulos de prueba Django y 3 archivos de prueba frontend), el `README.md` raíz, 36 archivos bajo `docs/` y `REGISTRO_CAMBIOS_BEATSCLOUD.md`. Por eso el inventario previo de 252 archivos de aplicación no contradice el total actual: este añade README, documentación y registro de cambios. `SOURCE_COMMIT.txt` y `SHA256SUMS` son dos metadatos añadidos para identificar y comprobar la copia; no forman parte de esos 290 archivos ni del commit de origen. Los textos históricos dentro del snapshot pueden mencionar herramientas, rutas o estados anteriores; la arquitectura vigente para esta entrega es la descrita arriba y en los documentos técnicos fechados al 18-11.
 
-El tablero Scrum está en Jira: https://beatscloud.atlassian.net (proyecto `DDPB`, "Desarrollo de plataforma Beatscloud").
+## Estado técnico al corte
 
-## Metodología
+La aplicación integra React, TypeScript y Vite en `frontend/client/`, un backend Django con API JSON propia y PostgreSQL. La autenticación usa sesiones y CSRF. Webpay Plus está integrado con Transbank; las pruebas automatizadas usan dobles y no acreditan transacciones reales. El almacenamiento admite archivos locales y una integración opcional con Cloudflare R2, desactivada en la configuración de ejemplo. Hay previews de audio y rutas protegidas para descargas. El código vigente no utiliza DRF ni JWT.
 
-### Marco de trabajo
+## Ejecución local del producto
 
-Trabajamos con Scrum, en 4 sprints de 2 semanas. En la Fase 1 el plan era en cascada (Carta Gantt de 18 semanas). El docente observó que eso no calzaba con Scrum, y desde la Fase 2 el trabajo se organiza solo por sprints, cada uno con una meta y un backlog propio.
+### Requisitos
 
-Cada sprint se presenta y se cierra en la clase del jueves, con su Sprint Review y su Retrospectiva. La del Sprint 1 está en `Fase 2/Evidencias Proyecto/Evidencias de documentación/acta_sprint_1.md`.
+Git, Python 3.12+, PostgreSQL 14+, Node.js 20+, npm y FFmpeg. La instalación debe seguir también el README incluido en el snapshot, que corresponde a la fuente oficial indicada arriba.
 
-### Backlog y estimación
+### Backend
 
-* El Product Backlog está en Jira, organizado en épicas, historias de usuario y tareas.
-* Las estimaciones se hacen en puntos de historia por planning poker.
-* La prioridad de cada ticket es Jira (High, Medium, Low). Los que son imprescindibles para el objetivo del proyecto se marcan además como "Must" en su descripción.
-* Las decisiones técnicas abiertas se numeran (D1 a D12) y se resuelven antes de estimar lo que dependa de ellas, porque cambian el alcance.
-
-### Flujo de estados
-
-`Tareas por hacer` → `En curso` → `En revisión` → `Finalizada`
-
-Criterio de terminado (adoptado desde el Sprint 2, después de detectar tickets marcados como finalizados sin el código correspondiente):
-
-* El código está subido a la rama principal del repositorio.
-* La funcionalidad fue ejecutada de punta a punta, con frontend y backend conectados.
-* Los criterios de aceptación del ticket se cumplen.
-* En el caso de QA, los resultados quedan registrados como comentario en el ticket.
-
-### Sprints
-
-| Sprint | Fechas (según Jira) | Meta | Puntos planificados |
-| :--- | :--- | :--- | :---: |
-| 1 | 3 al 15 de octubre | Cerrar el pago con Webpay de punta a punta en la SPA, decidir D3 y D6 y validar con QA lo ya construido | 22 (10 terminados) |
-| 2 | 16 al 30 de octubre | Cerrar el pago con Webpay en la SPA (retorno y pantallas de resultado), implementar la autenticación D3, conectar la SPA con el backend real y ejecutar las pruebas de Webpay | 20 |
-| 3 | 31 de octubre al 13 de noviembre | Subida directa a R2, descargas seguras con URL que expira, metadatos musicales y pruebas de seguridad, rendimiento y usabilidad | 29 |
-| 4 | 13 al 27 de noviembre | Filtros reales, licencias, historial de compra, regresión final y evidencias para la defensa | 23 |
-
-**Sprint 1:** de 22 puntos se terminaron 10. Dos tickets (retorno de Webpay a la SPA y pantallas de resultado de pago) figuraban como terminados sin estarlo y se reabrieron para el Sprint 2. Además se estimó mal el esfuerzo de integrar frontend y backend.
-
-**Planificación:** quedan 72 puntos pendientes y el equipo ha demostrado terminar cerca de 10 por sprint, así que la planificación actual excede esa capacidad. Se prioriza por dependencias (autenticación, backend real, pago, almacenamiento, descargas seguras, filtros y licencias). Si no alcanza el tiempo, lo que se recorta es lo de menor prioridad (filtros y orden en el cliente, historial de compra), no el flujo de compra y descarga segura.
-
-### Capacidad
-
-Cada integrante dispone de unos 60 minutos diarios. Los fines de semana se usan solo si falta tiempo.
-
-### Ajustes respecto de la Fase 1
-
-| Fase 1 | Fase 2 |
-| :--- | :--- |
-| Plan en cascada, Carta Gantt de 18 semanas | Scrum, 4 sprints de 2 semanas |
-| Interfaz en Next.js, que recargaba la página al cambiar de vista | SPA en React con Vite: el reproductor no se corta al navegar |
-| Alcance amplio: Webpay, Stripe y suscripciones | Foco en el flujo de compra chileno con Webpay Plus |
-| Subida de archivos con arrastrar y soltar | Subida directa y segura con selector estándar y validación de formatos de audio |
-
-### Alcance acordado
-
-* **Dentro:** registro y login, catálogo, reproductor con muestra de 30 segundos, carrito con IVA 19% calculado en el servidor, pago con Webpay Plus, descarga protegida tras el pago, subida de tracks, licencias verificables y almacenamiento en Cloudflare R2.
-* **Descartado por ahora:** suscripciones.
-* **Postergado:** pago con Stripe, textos legales completos, pulido visual final y despliegue en Vercel y Render.
-
-## Estado del proyecto
-
-| Objetivo | Estado | Detalle |
-| :--- | :--- | :--- |
-| Definir requerimientos | Completado | Backlog completo en Jira |
-| Base de datos PostgreSQL | Implementada | Modelo relacional con migraciones de Django |
-| Flujo de compra y pago | En curso | Carrito y Webpay Plus funcionan en ambiente de pruebas en el backend. Falta que el retorno llegue a la SPA y las pantallas de resultado (Sprint 2) |
-| Conectar frontend y backend | En curso | La SPA funciona con datos de prueba y en modo conectado. La integración completa es parte del Sprint 2 |
-| Almacenamiento en Cloudflare R2 | Pendiente | Sin iniciar. Está en el Sprint 3. Hoy los archivos se guardan en el servidor |
-| Seguridad de descargas | Parcial | La muestra de 30 segundos y el bloqueo sin compra existen. Los enlaces con vencimiento llegan en el Sprint 3 |
-| Pruebas y validación | En curso | Plan y casos de Webpay listos. Ejecución en el Sprint 2. Seguridad, rendimiento y usabilidad en el Sprint 3 |
-
-Para el estado ticket por ticket, el tablero de Jira es la fuente de verdad.
-
-## Arquitectura y tecnologías
-
-Arquitectura desacoplada: una SPA en React que consume una API del backend en Django.
-
-* **Frontend:** React 19, Vite 6, TypeScript y TailwindCSS 4. Funciona en modo `mock` (datos locales, sin backend) o conectado al backend (`VITE_API_MODE=rest`).
-* **Backend:** Python, Django 6, Django REST Framework, django-cors-headers y FFmpeg (genera la muestra de 30 segundos).
-* **Base de datos:** PostgreSQL.
-* **Pagos:** Transbank Webpay Plus (SDK de Python), en ambiente de pruebas.
-* **Almacenamiento de audio:** hoy, archivos en el servidor. Planificado: Cloudflare R2 con subida directa mediante URLs prefirmadas.
-* **Despliegue:** hoy solo local. Vercel y Render están planificados, pero postergados.
-
-## Estructura del repositorio
-
-```text
-2026_2_MA_CAPSTONE_005D_GRUPO_4/
-│
-├── Fase 1/
-│   ├── Evidencias Grupales/       # Propuesta, presentación y planilla de evaluación de la Fase 1
-│   └── Evidencias Individuales/   # Autoevaluaciones y diarios de reflexión de la Fase 1
-│
-├── Fase 2/
-│   ├── Evidencias Grupales/       # Informe de avance y presentación de la Fase 2
-│   ├── Evidencias Individuales/   # Diarios de reflexión de la Fase 2
-│   └── Evidencias Proyecto/
-│       ├── Evidencias de documentación/   # Acta del Sprint 1, indicadores de calidad, planilla de defectos y evidencias de pruebas
-│       └── Evidencias de sistema/
-│           ├── client/            # SPA en React + Vite + TypeScript
-│           ├── server/            # Backend en Django + PostgreSQL + Webpay
-│           └── alpha/             # Versión inicial del backend, con plantillas HTML de Django (referencia histórica)
-│
-└── Fase 3/
-    ├── Evidencias Grupales/       # Informe final y presentación (pendiente)
-    └── Evidencias Individuales/   # Evaluaciones finales y diarios (pendiente)
-```
-
-Documentación pendiente de agregar en `Evidencias de documentación`: diagramas UML, modelo de base de datos y manuales.
-
-## Ejecución local
-
-**Requisitos**
-
-* Node.js 20 o superior
-* Python 3.12 o superior (Django 6 no funciona con versiones anteriores)
-* PostgreSQL 14 o superior
-* FFmpeg instalado, o su ruta en la variable `FFMPEG_PATH`
-* Git
-
-**1. Clonar el repositorio**
+Desde una clonación de BeatsCloud:
 
 ```bash
-git clone https://github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4.git
-cd 2026_2_MA_CAPSTONE_005D_GRUPO_4
-```
-
-**2. Backend (Django)**
-
-Crear antes una base de datos en PostgreSQL y copiar `.env.example` a `.env` con los datos de conexión. Las credenciales de Transbank de pruebas también van en ese archivo, nunca en el frontend.
-
-```bash
-cd "Fase 2/Evidencias Proyecto/Evidencias de sistema/server"
-python -m venv venv
-# Windows: venv\Scripts\activate  |  Mac/Linux: source venv/bin/activate
-pip install -r requirements.txt
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+cp .env.example .env
+createdb -U postgres beatscloud_demo_local
+# Completa DJANGO_SECRET_KEY y los datos DB_USER/DB_PASSWORD en .env.
+python manage.py check
 python manage.py migrate
-python manage.py test app
-python manage.py runserver
+python manage.py prepare_demo_catalog
+python manage.py runserver 127.0.0.1:8000
 ```
 
-**3. Frontend (React), en otra terminal**
+`.env.example` es una plantilla versionada; `.env` es un archivo privado local, creado por cada integrante, que no se sube a Git. Ajusta el usuario PostgreSQL o `DB_NAME`, host y puerto si no usas los valores de ejemplo. Configura `FFMPEG_PATH` si FFmpeg no está en `PATH`. No uses secretos en variables `VITE_*`.
 
-```bash
-cd "Fase 2/Evidencias Proyecto/Evidencias de sistema/client"
-npm install
-npm run dev
-```
+### Frontend
 
-El frontend arranca en modo `mock`. Para usarlo con el backend, copiar `.env.example` a `.env` y poner `VITE_API_MODE=rest`. Vite redirige las llamadas `/api` a `http://127.0.0.1:8000`, así que el backend debe estar corriendo.
+En otra terminal: `cd frontend/client`, `npm ci`, `cp .env.example .env` y ejecuta `npm run dev`. Los comandos de comprobación son `npm test`, `npm run lint` y `npm run build`.
 
-## Calidad y pruebas
+## Pruebas y alcance conocido
 
-* Pruebas automáticas del backend: `python manage.py test app`.
-* Plan de pruebas y casos de Webpay (aprobado, rechazado, anulado, abandono y recompra): tickets DDPB-78, DDPB-79 y DDPB-82 en Jira.
-* Indicadores de calidad comprometidos: tasa de éxito de pagos con Webpay, descargas protegidas (bloqueo sin compra y enlaces con vencimiento), latencia de reproducción, facilidad de uso y cumplimiento del Burndown por sprint. Las metas y mediciones están en `indicadores_calidad.md`.
-* Defectos: `planilla_defectos.md`.
+La evidencia técnica del corte registra 372 pruebas Django, 26 pruebas frontend, TypeScript/lint, build y comprobaciones HTTP locales. Son validaciones automatizadas y smoke checks, no una prueba manual E2E. La validación manual completa en Firefox, compra y descarga E2E, Webpay real, R2 real, SMTP real y despliegue externo quedan pendientes de evidencia. Vicente está realizando QA según el estado informado; su registro permanece abierto y no contiene resultados futuros anticipados.
 
-## Notas finales
+## Evidencias de entrega
 
-Proyecto elaborado como parte de la asignatura Capstone (2026_2_MA_CAPSTONE_005D, Grupo 4). Todo el trabajo se coordina en el tablero de Jira y las evidencias se suben a este repositorio en cada entrega.
+- [Informe final en revisión (Markdown)](Fase%202/Evidencias%20Grupales/2.6_Informe_Final_Proyecto_APT_2026-11-18.md) y [versión DOCX](Fase%202/Evidencias%20Grupales/2.6_Informe_Final_Proyecto_APT_2026-11-18.docx).
+- Presentación de entrega: `Fase 2/Evidencias Grupales/Presentación_Final_BeatsCloud_2026-11-18.pptx`.
+- Presentación histórica de avance (15-10-2026), conservada y rotulada como avance.
+- Desarrollo y evidencias grupales/individuales existentes en las carpetas de Fase 1 y Fase 2.
+- [Trazabilidad técnica de contribuciones](https://github.com/felipe-urtubia/BeatsCloud/blob/main/docs/entrega-apt/trazabilidad_tecnica.md).
+- [Matriz interrepositorios de contribuciones](https://github.com/felipe-urtubia/BeatsCloud/blob/main/docs/entrega-apt/contribuciones_interrepositorios.md).
+
+El documento de informe conserva además su fuente Markdown para revisión. Los registros de planificación, defectos e indicadores fechados en octubre se mantienen como evidencia histórica y se identifican como tales; no representan el estado actual de Jira o de las integraciones. Los archivos con extensión Office deben validarse como contenedores OOXML; no se debe interpretar un archivo Markdown renombrado como `.docx`.
+
+El `main` académico recibido todavía contiene en su historia una configuración `.env` y dos archivos ZIP llamados `agregar.html` que incluyen miembros `.env`. La preparación los excluye del árbol de entrega. Sus valores no se divulgaron y no se pudo confirmar si seguían activos; sus custodios deben verificar exposición y rotación/revocación por canales privados. La exclusión local no sanea la historia publicada.

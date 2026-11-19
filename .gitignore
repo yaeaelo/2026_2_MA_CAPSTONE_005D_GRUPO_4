@@ -1,0 +1,21 @@
+# Configuración local y secretos
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Datos y artefactos locales
+*.sqlite
+*.sqlite3
+*.db
+**/node_modules/
+**/.venv/
+**/venv/
+**/dist/
+**/media/
+
+# Archivos comprimidos accidentales de configuración
+**/agregar.html
+**/agregar.zip

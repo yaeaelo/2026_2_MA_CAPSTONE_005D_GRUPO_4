@@ -1,3 +1,5 @@
+> **Nota de cierre, 18-11-2026:** registro histórico del módulo de integración, fechado en la entrega de avance de octubre. Las resoluciones/responsables son lo que reporta el artefacto, no una nueva verificación. La mención de DRF en DEF-02 contradice el código actual de BeatsCloud `f017627fec99b2628e7753d3626ed33367836c5c` (API Django propia sin DRF); se conserva como antecedente y no como descripción de arquitectura.
+
 # Planilla de Control de Defectos - Fase 2
 **Módulo:** Integración Frontend SPA - Backend Django  
 
