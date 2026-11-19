@@ -1,6 +1,6 @@
 # Matriz de cierre funcional — BeatsCloud
 
-**Corte de código:** snapshot `BeatsCloud-96918f4`, SHA `96918f43f147d46d5ae65746c988979c36854637`.
+**Snapshot vigente de producto:** `BeatsCloud-ee981a7`, SHA `ee981a750904b4263b20be2f91e3568c0e1699ea` (297 archivos fuente, manifiesto verificado). **Cortes de QA:** 372 pruebas Django, checks, `build.sh` y smoke HTTP en `4569613b29e7023161149ca5e7d5fddabf6437db`; prueba focalizada de registro/activación/login 1/1 en `ee981a750904b4263b20be2f91e3568c0e1699ea`; 26 pruebas frontend, TypeScript/lint y build Vite en `7ad7305fecdbdeff8b4f9d8c301b1f6f1c3e7dbe`. El snapshot `12a3ea0` y `e48174f` se conservan como históricos, no como versión vigente.
 **Fuente:** código y pruebas del repositorio de producto, documentación QA, registros académicos. Jira DDPB no estuvo conectado en esta sesión; `TEC-*` son referencias editoriales de `docs/entrega-apt/product_backlog.md`, no issue keys oficiales. Las claves Jira, estados y criterios deben contrastarse con una exportación actual.
 
 ## Estados

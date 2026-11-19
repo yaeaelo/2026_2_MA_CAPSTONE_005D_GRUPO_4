@@ -2,10 +2,16 @@
 
 **Uso:** insumo técnico para maquetar el informe y presentación definitivos con las plantillas oficiales Duoc UC. No reemplaza el informe ni la presentación vigentes. Los borradores individuales requieren validación de sus autores.
 
+## Estado de publicación
+
+El único corte vigente del producto es `ee981a750904b4263b20be2f91e3568c0e1699ea`, rama `closure/2026-11-19`, integrada con el `origin/main` observado `56c34c0878cbe44f658dfcc2b215e8c8064e2705` mediante merge normal. La identidad del consolidante se verificó con el perfil GitHub de ID 127540623 y commits locales de cierre con identidad Ismael Araya. Este paquete interno no declara publicación; se debe revisar README/estado Git antes de entregar. No reescribir historia ni atribuir cambios upstream a integrantes.
+
 ## Corte y fuentes de verdad
 
-- Producto: `felipe-urtubia/BeatsCloud`; snapshot académico verificable en `Fase 2/Evidencias Proyecto/Evidencias de sistema/BeatsCloud-96918f4/`.
-- SHA fuente: `96918f43f147d46d5ae65746c988979c36854637`; `SOURCE_COMMIT.txt` y `SHA256SUMS` fijan la procedencia. El snapshot contiene 294 archivos de origen y el manifiesto valida sus 294 hashes. Se conserva además el snapshot histórico `BeatsCloud-5021ee8/`.
+- Producto: `felipe-urtubia/BeatsCloud`; snapshot vigente en `Fase 2/Evidencias Proyecto/Evidencias de sistema/BeatsCloud-ee981a7/`.
+- SHA fuente: `ee981a750904b4263b20be2f91e3568c0e1699ea`; `SOURCE_COMMIT.txt` y `SHA256SUMS` fijan la procedencia. El snapshot contiene 297 archivos fuente rastreados y el manifiesto valida sus 297 hashes; se comparó byte por byte con blobs Git. `BeatsCloud-12a3ea0/`, `e48174f`, `96918f4` y `5021ee8` se conservan como cortes históricos.
+- QA no debe rotularse como corrido sobre el snapshot: la suite Django (372), checks/migraciones, `build.sh` y smoke corresponden a `4569613b29e7023161149ca5e7d5fddabf6437db`; la suite frontend (26), TypeScript/lint y build Vite al corte `7ad7305fecdbdeff8b4f9d8c301b1f6f1c3e7dbe`. El snapshot vigente se generó después de esas pruebas.
+- En el commit final se corrió además 1/1 prueba focalizada de registro/activación/login tras actualizar los textos de correo; backend de correo en memoria.
 - Jira DDPB: la sesión no tiene integración Atlassian conectada, por lo que no se verificó el estado del backlog. Los antiguos DDPB-66/74/81 se citan únicamente como referencias históricas.
 - No se recuperó `Evidencia_Pruebas_E2E_BeatsCloud.docx`, reportado por Vicente el 11-11. Existe la referencia y límite en `Evidencias de documentación/registro_evidencia_e2e_vicente.md`.
 
@@ -45,6 +51,16 @@ Ejecutor: runner automatizado local. No presentarlo como ejecución de Vicente n
 
 Roles principales no excluyentes: desde septiembre el equipo acordó trabajo multidisciplinario y la especialización se consolidó durante los sprints. Mantener las actividades informadas por WhatsApp separadas de commits Git y explicar su límite probatorio mediante la matriz externa.
 
+## Evidencias Scrum y retrospectivas
+
+El paquete de trabajo incluye tres fichas para los sprints que el equipo indicó haber retrospectado, más una matriz general:
+
+- **Sprint 1:** síntesis editorial del acta original de 15-10-2026. El acta registra dificultades por mezcla de archivos, build/submódulos y CORS; y compromisos explícitos sobre ramas/commits, descargas R2 y checkout Webpay. La ficha anota que DRF en el acta contradice la arquitectura del corte actual y que los puntos reportados por fuentes distintas no coinciden.
+- **Sprint 2:** reconstrucción de mensajes 05–11-11 sobre QA pendiente, preparación de entorno y traslado de trabajo. No se presenta como acta ni se asignan asistentes, fecha de ceremonia o acuerdos no documentados.
+- **Sprint 3:** reconstrucción de mensajes 08–11-11 sobre inicio/traspaso entre sprints, claridad de tareas y precondiciones QA. Los aprendizajes son derivados y no se presentan como compromisos históricos.
+
+Ubicación: `Fase 2/Evidencias Grupales/Retrospectivas/`. Cada retro tiene Markdown editable y DOCX de lectura. `Matriz_cobertura_Scrum.md` registra inicio/roles, backlog, planning, review, incrementos, seguimiento y QA; `Matriz_acciones_mejora.md` separa acuerdos explícitos de observaciones/recomendaciones con estado verificable. `Propuesta_actualizacion_Jira_DDPB.md` deja cambios listos para conciliar cuando exista acceso; no hubo escritura a Jira.
+
 ## Estructura recomendada del informe
 
 1. Portada con integrantes, asignatura y fecha.
@@ -52,7 +68,7 @@ Roles principales no excluyentes: desde septiembre el equipo acordó trabajo mul
 3. Abstract en español.
 4. Problema/oportunidad y límites de evidencia de mercado.
 5. Objetivos y alcance: separar implementado, validado y pendiente.
-6. Metodología y planificación: proceso Scrum observado; contrastar planificación pasada con Jira solo si se obtiene exportación.
+6. Metodología y planificación: tres retrospectivas con su tipo de fuente visible, matriz de cobertura Scrum y limitación de Jira; conciliar planificación pasada con Jira solo si se obtiene exportación.
 7. Diseño de ingeniería: arquitectura, modelo de datos, tecnologías, seguridad de sesión/CSRF y almacenamiento.
 8. Desarrollo e integración: frontend/API, catálogo/audio, pagos, permisos y decisión de almacenamiento local/R2.
 9. QA: suites y smoke del 19-11, indicadores históricos expresamente fechados, defectos y pruebas externas pendientes.
@@ -88,3 +104,8 @@ Preparar respuestas sobre: sesión/CSRF; autorización de descargas; qué prueba
 - Matriz histórica de autoría `matriz_autoria_commits.csv` y matriz externa `matriz_contribuciones_externas.md`.
 - Matriz funcional y guías QA en el snapshot del producto; registro QA de Vicente abierto.
 - El anexo visual de ejecución debe incorporar capturas reales sin cookies, tokens, datos personales ni credenciales. Las capturas funcionales actuales no están disponibles en el repositorio; no crear imágenes simuladas para presentarlas como uso real.
+
+
+## Traspaso documental a Claude
+
+Prompt listo para copiar: `Fase 2/Evidencias Grupales/PROMPT_CLAUDE_CIERRE_DOCUMENTAL.md`. Incluye inventario de fuentes, plantilla oficial, criterios, SHAs, retrospectivas, límites de evidencia y datos por validar. La plantilla PPTX obtenida localmente está en `Fase 2/Evidencias Grupales/Plantillas/Presentación Formato.pptx`; no se localizó plantilla DOCX institucional. El archivo es un insumo interno, no informe final ni autorización para inventar hechos.
