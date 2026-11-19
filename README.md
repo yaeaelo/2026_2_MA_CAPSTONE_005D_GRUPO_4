@@ -69,6 +69,7 @@ El cierre del 19-11-2026 ejecutó en el código de producto y entorno QA local 3
 - [Guion de defensa de 15 minutos + 5 minutos de preguntas](Fase%202/Evidencias%20Grupales/Guion_Defensa_Final_2026-11-19.md).
 - Presentación histórica de avance (15-10-2026), conservada y rotulada como avance.
 - [Trazabilidad de los historiales base (112 commits; correos protegidos por hash)](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_autoria_commits.csv).
+- [Matriz suplementaria de commits de cierre e integración](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_commits_cierre.csv).
 - [Matriz de aportes externos y WhatsApp](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_contribuciones_externas.md).
 - [Estado del documento E2E de Vicente](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/registro_evidencia_e2e_vicente.md).
 - [Matriz de cierre funcional: implementación, pruebas, documentación y estado](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/matriz_cierre_funcional_2026-11-19.md).

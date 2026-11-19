@@ -1,6 +1,6 @@
 # Trazabilidad de contribuciones
 
-Corte documental: 18 de noviembre de 2026. Esta matriz reconoce evidencia verificable en ambos repositorios. La atribución distingue autor del trabajo, integración, documentación y QA; no supone que cada archivo tenga un único responsable ni usa el número de commits como medida de esfuerzo.
+Corte documental: 19 de noviembre de 2026. Esta matriz reconoce evidencia verificable en ambos repositorios. La atribución distingue autor del trabajo, integración, documentación y QA; no supone que cada archivo tenga un único responsable ni usa el número de commits como medida de esfuerzo.
 
 | Integrante | Contribuciones verificables | Evidencia | Estado |
 |---|---|---|---|
@@ -12,7 +12,7 @@ Corte documental: 18 de noviembre de 2026. Esta matriz reconoce evidencia verifi
 
 Los tres commits de Vicente prueban documentación y seguimiento de QA; no se le atribuyen las correcciones de código que los documentos asignan a Ismael o Felipe. Las métricas citadas en el repositorio académico deben leerse junto con el informe y su contexto de medición. La evidencia disponible no permite convertir una actividad informada como actual en un resultado cerrado.
 
-La copia del producto incluida en esta entrega corresponde exactamente al commit `5021ee84ada9fbd8121362c676572b3a3e68d6d4` de BeatsCloud. Ese commit, de Felipe, se incorpora como evidencia adicional a la matriz de autoría. Prepara settings de proxy HTTPS/estáticos, WhiteNoise, Gunicorn y un script de build Render. La preparación documental posterior no atribuye ese código a Ismael. Los hashes por archivo permiten comprobar la correspondencia del snapshot; no se declara despliegue probado.
+La copia vigente del producto incluida en esta entrega corresponde exactamente al commit `96918f43f147d46d5ae65746c988979c36854637` de BeatsCloud y su procedencia está en `SOURCE_COMMIT.txt`/`SHA256SUMS`. El commit `5021ee8` de Felipe, ancestro del snapshot, prepara settings de proxy HTTPS/estáticos, WhiteNoise, Gunicorn y build Render; esta evidencia no reasigna ese código a Ismael. La ejecución local posterior de `build.sh` está documentada separadamente; no se declara despliegue externo probado.
 
 
 La evidencia externa completa por fecha, incluidos los mensajes del 03/11/14/15 de octubre y del 05–18 de noviembre, está resumida en [`matriz_contribuciones_externas.md`](matriz_contribuciones_externas.md). El archivo E2E que Vicente reportó se busca en [`registro_evidencia_e2e_vicente.md`](registro_evidencia_e2e_vicente.md); no fue recuperado. La matriz de autoría de 112 commits y los límites de atribución está en [`matriz_autoria_commits.csv`](matriz_autoria_commits.csv).
