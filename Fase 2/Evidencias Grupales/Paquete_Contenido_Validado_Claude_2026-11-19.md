@@ -4,7 +4,7 @@
 
 ## Estado de publicación
 
-El único corte vigente del producto es `ee981a750904b4263b20be2f91e3568c0e1699ea`, rama `closure/2026-11-19`, integrada con el `origin/main` observado `56c34c0878cbe44f658dfcc2b215e8c8064e2705` mediante merge normal. La identidad del consolidante se verificó con el perfil GitHub de ID 127540623 y commits locales de cierre con identidad Ismael Araya. Este paquete interno no declara publicación; se debe revisar README/estado Git antes de entregar. No reescribir historia ni atribuir cambios upstream a integrantes.
+El corte vigente del producto es `ee981a750904b4263b20be2f91e3568c0e1699ea`, publicado en `main` por fast-forward normal tras integrar `56c34c0878cbe44f658dfcc2b215e8c8064e2705`. El repositorio académico publicó el paquete de cierre por fast-forward normal desde `e46b172`. La identidad del consolidante se verificó con el perfil GitHub de ID 127540623 y commits locales de cierre con identidad Ismael Araya. Este archivo es un dossier interno, no entregable académico final. No reescribir historia ni atribuir cambios upstream a integrantes.
 
 ## Corte y fuentes de verdad
 

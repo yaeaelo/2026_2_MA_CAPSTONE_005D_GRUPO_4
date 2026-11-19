@@ -25,7 +25,7 @@ El snapshot vigente manifiesta 297 archivos de origen y contiene 299 contando `S
 
 ## Estado de publicación del cierre
 
-El producto quedó en `ee981a7` tras integrar normalmente el `origin/main` actualizado hasta `56c34c0`; antes de publicación, `closure/2026-11-19` es descendiente de ese remoto y mantiene 14 commits de cierre. Los commits locales de consolidación usan la identidad verificada de Ismael; autores upstream se preservan. La rama académica parte de `e46b172` y conserva cambios documentales locales aún no publicados. No se hizo force-push ni se alteró historia publicada.
+El producto se publicó por fast-forward normal en GitHub: `main` quedó en `ee981a750904b4263b20be2f91e3568c0e1699ea`, descendiente del `origin/main` previo `56c34c0`. El repositorio académico incorpora el snapshot, los documentos de cierre, la plantilla y las evidencias Scrum en su rama `main` mediante fast-forward normal desde `e46b172`. Los commits de consolidación usan la identidad verificada de Ismael; autores upstream se preservan. No se hizo force-push ni se alteró historia publicada.
 
 ## Estado técnico al corte
 
