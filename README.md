@@ -1,79 +1,51 @@
-# Proyecto Capstone: BeatsCloud
+# BeatsCloud — repositorio académico
 
-**Asignatura / sección:** 2026_2_MA_CAPSTONE_005D
+Repositorio oficial de la entrega académica del proyecto Capstone 2026_2_MA_CAPSTONE_005D, Grupo 4. Contiene entregables, evidencias de evaluación y un snapshot técnico fechado del producto. El código vigente tiene como fuente de verdad el repositorio oficial [felipe-urtubia/BeatsCloud](https://github.com/felipe-urtubia/BeatsCloud), rama `main`.
 
-**Grupo:** GRUPO_4
-
-**Institución:** Duoc UC
-
-**Docente:** Fabián Álvarez Montenegro
-
-## Descripción del proyecto
-
-BeatsCloud es una plataforma web académica que conecta productores musicales con artistas. Permite publicar y explorar instrumentales, escuchar previsualizaciones y gestionar el acceso protegido a archivos y compras.
-
-## Equipo de trabajo
-
-| Nombre | Rol / responsabilidad | Correo electrónico | GitHub |
-|---|---|---|---|
-| Ismael Araya | Scrum Master / Desarrollador frontend / UI-UX | ism.araya@duocuc.cl | [@yaeaelo](https://github.com/yaeaelo) |
-| Felipe Urtubia | Product Owner / Desarrollador backend | feli.urtubia@duocuc.cl | @felipeurtubia133 |
-| Vicente Monroy | Aseguramiento de Calidad (QA) / Evidencias | vi.monroy@duocuc.cl | [@monroyvicente1](https://github.com/monroyvicente1) |
-
-## Estructura del repositorio
+## Estructura
 
 ```text
-2026_2_MA_CAPSTONE_005D_GRUPO_4/
-├── Fase 1/
-│   ├── Evidencias Grupales/
-│   └── Evidencias Individuales/
-├── Fase 2/
-│   ├── Evidencias Grupales/
-│   │   ├── Informe_Final_BeatsCloud.docx
-│   │   ├── Presentacion_Final_BeatsCloud.pptx
-│   │   ├── Guion_Defensa_Final_BeatsCloud.docx
-│   │   └── Retrospectivas/
-│   ├── Evidencias Individuales/
-│   └── Evidencias Proyecto/
-│       ├── Evidencias de documentación/
-│       └── Evidencias de sistema/
-│           └── BeatsCloud-ee981a7/
-└── Fase 3/
-    ├── Evidencias Grupales/
-    └── Evidencias Individuales/
+Fase 1/
+├── Evidencias Individuales/
+└── Evidencias Grupales/
+Fase 2/
+├── Evidencias Individuales/
+├── Evidencias Grupales/
+└── Evidencias Proyecto/
+    ├── Evidencias de documentación/
+    └── Evidencias de sistema/
+        └── BeatsCloud_snapshot_3ca1408/
+Fase 3/
+├── Evidencias Grupales/
+└── Evidencias Individuales/
 ```
 
-Las carpetas de Fase 3 se mantienen vacías como estructura de entrega.
+### Fase 1
 
-## Repositorios del proyecto
+Se preserva la estructura original de evidencias individuales y grupales, incluidos los tres documentos individuales de autoevaluación/diario disponibles por integrante, la presentación, la formativa, la guía del estudiante y la planilla de evaluación. La guía `1.5_GuiaEstudiante_Fase 1_Definicion Proyecto APT (Español).docx` permanece en Evidencias Grupales. No se reconstruyeron documentos originales.
 
-- **Sistema BeatsCloud:** [github.com/felipe-urtubia/BeatsCloud](https://github.com/felipe-urtubia/BeatsCloud)
-- **Entrega académica:** [github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4](https://github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4)
+### Fase 2
 
-## Entregables finales
+- **Entregables grupales:** presentación final PPTX/PDF del 24-11, guía de estudiante y retrospectivas. El informe disponible fechado 19-11 se preserva como antecedente en `Entregables historicos/`; la versión nueva mencionada no estaba en los archivos locales recibidos.
+- **Entregables individuales:** diarios de reflexión de los tres integrantes.
+- **Evidencias del proyecto:** actas y documentación; registro de ejecución/navegador; QA final y capturas reales en `Fase 2/Evidencias Proyecto/Evidencias de documentación/QA_Cierre_2026-11-25/`.
+- **Evidencias técnicas:** extracción del repositorio de producto en `Fase 2/Evidencias Proyecto/Evidencias de sistema/BeatsCloud_snapshot_3ca1408/`.
 
-- [Informe final (DOCX)](Fase%202/Evidencias%20Grupales/Informe_Final_BeatsCloud.docx)
-- [Presentación final (PPTX)](Fase%202/Evidencias%20Grupales/Presentacion_Final_BeatsCloud.pptx)
-- [Guion de defensa (DOCX)](Fase%202/Evidencias%20Grupales/Guion_Defensa_Final_BeatsCloud.docx)
-- [Documentación y evidencias de QA](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentación/validacion_qa_cierre_2026-11-19.md)
+El paquete QA identifica pruebas automatizadas, resultados manuales, defectos, evaluación heurística, seguridad, licencias, rendimiento y límites por ticket. QA corresponde administrativamente a Vicente Monroy; la preparación y ejecución técnica de esta corrida fue realizada por Ismael Araya con asistencia de Codex.
 
-La exposición considera aproximadamente 15 minutos y 5 minutos de preguntas. El guion sigue las 13 diapositivas de la presentación.
+## Entregables finales y disponibilidad
 
-## Tecnologías
+- **Presentación:** [Presentacion_Final_Fase2_BeatsCloud_2026-11-24.pptx](Fase%202/Evidencias%20Grupales/Presentacion_Final_Fase2_BeatsCloud_2026-11-24.pptx) y PDF de exportación.
+- **Informe:** el repositorio solo contenía el informe fechado 19-11-2026 basado en el SHA `ee981a7`; la versión nueva mencionada para el cierre no estaba entre los archivos locales recibidos. Se conserva [como antecedente identificado](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/Entregables%20historicos/Informe_Corte_2026-11-19_BeatsCloud.docx), no se presenta como nueva versión final.
+- **QA:** [Informe de cierre QA](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/QA_Cierre_2026-11-25/INFORME_CIERRE_QA.md) y [matriz de casos](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/QA_Cierre_2026-11-25/MATRIZ_CASOS_QA.md).
+- **Contribuciones verificables:** [matriz por responsabilidades](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/MATRIZ_CONTRIBUCIONES.md). Los conteos Git no se igualaron ni se alteró autoría histórica.
+- **Jira:** [propuestas de actualización DDPB](Fase%202/Evidencias%20Proyecto/Evidencias%20de%20documentaci%C3%B3n/JIRA_ACTUALIZACIONES_PROPUESTAS.md). Jira no se consultó ni modificó.
 
-- **Frontend:** React, TypeScript, Vite y Tailwind CSS.
-- **Backend:** Python y Django; API JSON propia implementada en `app/api_shim.py`.
-- **Persistencia:** PostgreSQL mediante modelos y migraciones Django.
-- **Autenticación:** sesiones Django, cookies y protección CSRF.
-- **Pagos:** integración Webpay Plus de Transbank; las pruebas automatizadas no acreditan una compra real de extremo a extremo.
-- **Archivos:** almacenamiento local e integración opcional con Cloudflare R2; la validación contra un bucket real no está acreditada.
+## Snapshot del producto
 
-## Instalación y ejecución
+El snapshot `BeatsCloud_snapshot_3ca1408` proviene de la rama `main` del repositorio oficial, commit completo `3ca1408d86ae66a56d3de9df97f270aaddb9b31e`, extraído el 25-11-2026. `SOURCE_COMMIT.txt`, `MANIFEST.md` y `SHA256SUMS` registran procedencia, exclusiones e integridad. Es una evidencia histórica de ese corte; el repositorio de producto sigue siendo la fuente de verdad.
 
-El repositorio académico contiene los entregables y una copia de referencia del código. Para preparar y ejecutar el sistema, clona el [repositorio BeatsCloud](https://github.com/felipe-urtubia/BeatsCloud) y sigue su [README de instalación](https://github.com/felipe-urtubia/BeatsCloud#readme), que describe requisitos, `.env.example`, PostgreSQL, backend, frontend y pruebas.
+## Repositorios oficiales
 
-No publiques `.env`, credenciales ni secretos. Usa las plantillas `.env.example` y configura los valores sensibles solo en el entorno local.
-
-## QA documentado
-
-En el corte `ee981a750904b4263b20be2f91e3568c0e1699ea` se reportaron 372 pruebas Django y 26 pruebas frontend aprobadas, además de checks, migraciones, TypeScript, lint y build Vite. Los resultados de Selenium corresponden a automatización de navegador, no a una prueba manual. La copia académica incluye la migración posterior `0028_seed_generos_musicales.py` de `d87bde1117b58806b295ccf56655f5cbd37beb17`; esa migración no formó parte de la ejecución QA indicada. El informe y el registro de QA detallan el alcance y los cortes de cada resultado.
+- [Producto BeatsCloud](https://github.com/felipe-urtubia/BeatsCloud)
+- [Entrega académica](https://github.com/yaeaelo/2026_2_MA_CAPSTONE_005D_GRUPO_4)
