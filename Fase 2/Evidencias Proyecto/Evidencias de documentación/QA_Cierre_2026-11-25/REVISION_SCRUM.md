@@ -5,5 +5,5 @@ En la carpeta académica existen actas, retrospectivas de Sprint 1–4 y Sprint 
 No se creó un burndown histórico con fechas/puntos inventados. El material disponible no contiene un historial diario completo verificable que permita reconstruirlo. Para DDPB-87 se recomienda mantener abiertas las partes sin fuente primaria y usar únicamente exportaciones de Jira ya existentes con fecha y alcance declarados. Esta ejecución no se conectó a Jira.
 
 **QA administrativo:** área asignada a Vicente Monroy.
-**Preparación/ejecución técnica de esta corrida:** Ismael Araya con asistencia de Codex.
+**Ejecución técnica documentada de esta corrida:** Codex como apoyo al cierre QA de Ismael Araya; no hay atribución de acciones individuales sin evidencia registrada.
 **Publicación Git:** autor real del commit que se registre; no equivale a haber ejecutado todas las ceremonias o casos QA.

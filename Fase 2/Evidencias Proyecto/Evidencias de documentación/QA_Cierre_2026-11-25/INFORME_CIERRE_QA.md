@@ -1,6 +1,6 @@
 # Informe de cierre QA — BeatsCloud
 
-**Ejecución:** apoyo técnico de Codex bajo la dirección de Ismael Araya. **Responsable administrativo del área QA:** Vicente Monroy.
+**Ejecución de las pruebas y capturas documentadas:** Codex, como apoyo técnico al cierre de QA de Ismael Araya. **Responsable administrativo del área QA:** Vicente Monroy. No se atribuyen interacciones personales que no estén respaldadas por esta corrida.
 **Fecha local:** 25-11-2026. **Código probado:** rama `main`, SHA `6ff6f55c3233644c1809ae0b807e74476ee5eafd`. **Producto main al cierre documental:** SHA `3ca1408d86ae66a56d3de9df97f270aaddb9b31e`; el commit posterior solo cambió README, `.mailmap`, `.gitignore` y documentación QA, sin alterar lógica ni pruebas de aplicación.
 **Fuente:** [repositorio oficial BeatsCloud](https://github.com/felipe-urtubia/BeatsCloud). El snapshot asociado está en [BeatsCloud_snapshot_3ca1408](../../Evidencias%20de%20sistema/BeatsCloud_snapshot_3ca1408/).
 

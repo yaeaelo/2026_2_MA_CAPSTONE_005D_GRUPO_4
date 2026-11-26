@@ -10,4 +10,4 @@ Evidencia QA del producto `6ff6f55c3233644c1809ae0b807e74476ee5eafd`.
 - [Scrum y límites documentales](REVISION_SCRUM.md)
 - Capturas reales: [capturas/](capturas/)
 
-Responsable administrativo del área QA: Vicente Monroy. La preparación y ejecución técnica documentada fue realizada por Ismael Araya con asistencia de Codex. Jira no fue consultado ni modificado. No se hicieron compras, escrituras en servicios publicados ni pruebas con R2 real.
+Responsable administrativo del área QA: Vicente Monroy. Las pruebas y capturas de esta corrida fueron ejecutadas por Codex como apoyo técnico al cierre QA de Ismael Araya; no se atribuyen interacciones personales sin evidencia. Jira no fue consultado ni modificado. No se hicieron compras, escrituras en servicios publicados ni pruebas con R2 real.

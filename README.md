@@ -31,7 +31,7 @@ Se preserva la estructura original de evidencias individuales y grupales, inclui
 - **Evidencias del proyecto:** actas y documentación; registro de ejecución/navegador; QA final y capturas reales en `Fase 2/Evidencias Proyecto/Evidencias de documentación/QA_Cierre_2026-11-25/`.
 - **Evidencias técnicas:** extracción del repositorio de producto en `Fase 2/Evidencias Proyecto/Evidencias de sistema/BeatsCloud_snapshot_3ca1408/`.
 
-El paquete QA identifica pruebas automatizadas, resultados manuales, defectos, evaluación heurística, seguridad, licencias, rendimiento y límites por ticket. QA corresponde administrativamente a Vicente Monroy; la preparación y ejecución técnica de esta corrida fue realizada por Ismael Araya con asistencia de Codex.
+El paquete QA identifica pruebas automatizadas, resultados manuales, defectos, evaluación heurística, seguridad, licencias, rendimiento y límites por ticket. QA corresponde administrativamente a Vicente Monroy. Las pruebas y capturas documentadas en esta corrida fueron ejecutadas por Codex como apoyo técnico al cierre de QA de Ismael Araya; no se atribuyen ejecuciones personales que no estén respaldadas por evidencia.
 
 ## Entregables finales y disponibilidad
 
