@@ -1,0 +1,15 @@
+{
+  "fecha_local": "2026-11-25",
+  "sha_producto": "6ff6f55c3233644c1809ae0b807e74476ee5eafd",
+  "entorno": "QA local aislado; PostgreSQL QA, 125 pistas de prueba/sintéticas, Vite y Django locales",
+  "navegador": "Mozilla Firefox 160.0 headless; Selenium 4.54.0",
+  "casos": [
+    {"id":"MAN-01","estado":"Aprobada","observado":"La SPA carga inicio como usuario anónimo en escritorio.","evidencia":"01_inicio_escritorio_anonimo.png"},
+    {"id":"MAN-02","estado":"Aprobada","observado":"El catálogo local presenta 125 pistas y controles de búsqueda, género, tonalidad, mood, precio y orden.","evidencia":"02_catalogo_escritorio.png"},
+    {"id":"MAN-03","estado":"Aprobada","observado":"El botón del catálogo inicia preview; la captura muestra reproductor en pausa disponible, contador y progreso en curso. El smoke HTTP del mismo entorno devolvió 200 para preview.","evidencia":"03_catalogo_preview.png"},
+    {"id":"MAN-04","estado":"Aprobada","observado":"El carrito anónimo muestra que se requiere iniciar sesión y no expone contenido privado.","evidencia":"04_carrito_anonimo.png"},
+    {"id":"MAN-05","estado":"Bloqueada","observado":"No se completó la apertura del formulario de login: el control inferior quedó interceptado por una capa de la tarjeta del catálogo al usar Selenium. No se atribuye el bloqueo a un defecto del producto.","evidencia":""},
+    {"id":"MAN-06","estado":"Bloqueada","observado":"Se abrió el build estático para vista estrecha; Firefox impuso viewport CSS de 500 px (scrollWidth 500). Sin backend, mostró error de sesión y no acredita prueba móvil funcional ni viewport 390 px.","evidencia":"07_inicio_movil_build.png"},
+    {"id":"MAN-07","estado":"Aprobada","observado":"En el build estático se abrió el modal de acceso desde la navegación y se verificó su representación visual. Sin backend conectado; no se enviaron credenciales ni se probó autenticación/sesión.","evidencia":"08_acceso_modal_build.png"}
+  ]
+}
