@@ -1,0 +1,39 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+db.sqlite3
+media/
+staticfiles/
+.vscode/
+.qa-private/
+
+# Local tooling
+.qodo/
+
+# Frontend: dependencias y artefactos generados
+**/node_modules/
+**/dist/
+**/*.tsbuildinfo
+.vite/
+**/.DS_Store
+**/Thumbs.db
+
+# Herramientas locales y respaldos
+.wrangler/
+backups/
+*.bak_*
+
+# Archivos locales que no deben incorporarse al repositorio
+*.zip
+*.sqlite
+*.sqlite3
+*.db
+*.log
+*.tmp
+
+# Archivos ZIP accidentales que alojaron configuración privada
+**/agregar.html
+**/agregar.zip

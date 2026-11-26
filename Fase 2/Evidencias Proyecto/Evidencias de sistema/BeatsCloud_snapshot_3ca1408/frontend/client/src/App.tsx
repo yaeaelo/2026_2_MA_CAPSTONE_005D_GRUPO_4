@@ -1,0 +1,461 @@
+import React, { useState, useEffect } from 'react';
+import { useApp } from './context/AppContext';
+import { Sidebar } from './components/Sidebar';
+import { TopBar } from './components/TopBar';
+import { GlobalAudioPlayer } from './components/GlobalAudioPlayer';
+
+
+
+
+
+
+
+import { TrackDetailModal } from './components/TrackDetailModal';
+import { UploadTrackModal } from './components/UploadTrackModal';
+import { AuthModal } from './components/AuthModal';
+import { Track, UserType, ResourceType } from './types';
+import {
+  readNavigation,
+  makeTrackUrl,
+  makeProfileUrl,
+  readPageNavigation,
+  makeTabUrl,
+  lookupPublicProfile,
+  lookupPublicProfileForRoute,
+} from './navigation/urlState';
+import { BackendStatusBanner } from './components/BackendStatusBanner';
+import { getProtectedSectionNotice } from './navigation/authGuard';
+import { X } from 'lucide-react';
+import { AccountDeletionModal } from './components/AccountDeletionModal';
+const AboutPage = React.lazy(() => import('./components/AboutPage').then(module => ({ default: module.AboutPage })));
+const ArtistProfilePage = React.lazy(() => import('./components/ArtistProfilePage').then(module => ({ default: module.ArtistProfilePage })));
+const ProducerProfilePage = React.lazy(() => import('./components/ProducerProfilePage').then(module => ({ default: module.ProducerProfilePage })));
+const UsersCatalogPage = React.lazy(() => import('./components/UsersCatalogPage').then(module => ({ default: module.UsersCatalogPage })));
+const CartPage = React.lazy(() => import('./components/CartPage').then(module => ({ default: module.CartPage })));
+const CatalogPage = React.lazy(() => import('./components/CatalogPage').then(module => ({ default: module.CatalogPage })));
+const DiscoverPage = React.lazy(() => import('./components/DiscoverPage').then(module => ({ default: module.DiscoverPage })));
+
+export const App: React.FC = () => {
+  const { currentUser, users, paymentNotice, paymentReturnReady, clearPaymentNotice, authNotice, clearAuthNotice, setActiveResourceFilter, notifications, dismissNotification } = useApp();
+
+  const [currentTab, setCurrentTab] = useState<string>(
+    () => readNavigation(window.location.search).profileUsername
+      ? 'perfil_externo'
+      : readPageNavigation(window.location.search).tab,
+  );
+  const [selectedTrackId, setSelectedTrackId] = useState<string | null>(
+    () => readNavigation(window.location.search).trackId,
+  );
+
+  // Profile view state
+  const [viewedProfileUsername, setViewedProfileUsername] = useState<string | null>(
+    () => readNavigation(window.location.search).profileUsername,
+  );
+
+  const viewedProfile = lookupPublicProfile(
+    users, viewedProfileUsername
+  );
+
+  // Modals & Mobile state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [uploadModalOpen, setUploadModalOpen] = useState(false);
+  const [trackToEdit, setTrackToEdit] = useState<Track | null>(null);
+  const [authModalOpen, setAuthModalOpen] = useState(
+    () => new URLSearchParams(window.location.search).get('auth') === 'login',
+  );
+  const [accountDeletionOpen, setAccountDeletionOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
+
+  useEffect(() => {
+    const syncTrackFromUrl = () => {
+      const { trackId, profileUsername: username } =
+        readNavigation(window.location.search);
+
+      setSelectedTrackId(trackId);
+
+      setViewedProfileUsername(username);
+      const page = readPageNavigation(window.location.search);
+      setActiveResourceFilter(page.resource);
+
+      setCurrentTab(username ? 'perfil_externo' : page.tab);
+    };
+
+    syncTrackFromUrl();
+    window.addEventListener('popstate', syncTrackFromUrl);
+
+    return () => {
+      window.removeEventListener('popstate', syncTrackFromUrl);
+    };
+  }, [setActiveResourceFilter]);
+
+  const handleOpenTrackDetail = (id: string) => {
+    if (!id) return;
+
+    const url = new URL(window.location.href);
+
+    if (url.searchParams.get('track') !== id) {
+      const previousState = window.history.state;
+      const state =
+        typeof previousState === 'object' && previousState !== null
+          ? { ...previousState, beatcloudTrackOverlay: true }
+          : { beatcloudTrackOverlay: true };
+
+      window.history.pushState(
+        state,
+        '',
+        makeTrackUrl(window.location.href, id)
+      );
+    }
+
+    setSelectedTrackId(id);
+  };
+
+  const handleCloseTrackDetail = () => {
+    const url = new URL(window.location.href);
+
+    if (url.searchParams.has('track')) {
+      if (window.history.state?.beatcloudTrackOverlay === true) {
+        window.history.back();
+      } else {
+        url.searchParams.delete('track');
+        window.history.replaceState(
+          window.history.state,
+          '',
+          `${url.pathname}${url.search}${url.hash}`
+        );
+      }
+    }
+
+    setSelectedTrackId(null);
+  };
+
+  const handleOpenAuth = (mode: 'login' | 'register') => {
+    setAuthMode(mode);
+    setAuthModalOpen(true);
+  };
+
+  const handleOpenUpload = () => {
+    setTrackToEdit(null);
+    setUploadModalOpen(true);
+  };
+
+  const handleEditTrack = (track: Track) => {
+    setTrackToEdit(track);
+    setUploadModalOpen(true);
+  };
+
+  const handleNavigateTab = (tab: string, resource?: ResourceType) => {
+    const chosenResource = tab === 'catalogo' ? resource ?? 'all' : 'all';
+    const destination = makeTabUrl(window.location.href, tab, chosenResource);
+    const actual =
+      `${window.location.pathname}${window.location.search}${window.location.hash}`;
+
+    if (destination !== actual) {
+      window.history.pushState({ beatcloudTab: tab }, '', destination);
+    }
+
+    setActiveResourceFilter(chosenResource);
+    setSelectedTrackId(null);
+    setViewedProfileUsername(null);
+    setCurrentTab(readPageNavigation(new URL(destination, window.location.origin).search).tab);
+  };
+
+  const handleOpenPublicProfile = (userId: string, role: UserType) => {
+    const target = lookupPublicProfileForRoute(
+      users, userId, role
+    );
+
+    if (!target) return;
+
+    const destino = makeProfileUrl(
+      window.location.href, target.username
+    );
+    const actual =
+      `${window.location.pathname}${window.location.search}${window.location.hash}`;
+
+    if (destino !== actual) {
+      if (!new URLSearchParams(window.location.search).has('profile')) {
+        const previousState = window.history.state;
+
+        const state =
+          typeof previousState === 'object' && previousState !== null
+            ? previousState
+            : {};
+
+        window.history.replaceState(
+          { ...state, beatcloudTab: currentTab },
+          '',
+          actual
+        );
+      }
+
+      window.history.pushState(
+        { beatcloudPublicProfile: true },
+        '',
+        destino
+      );
+    }
+
+    setSelectedTrackId(null);
+    setViewedProfileUsername(target.username);
+    setCurrentTab('perfil_externo');
+  };
+
+  const handleOpenProducerProfile = (producerId: string) => {
+    handleOpenPublicProfile(producerId, 'productor');
+  };
+
+  const handleSelectCommunityUser = (userId: string, role: UserType) => {
+    handleOpenPublicProfile(userId, role);
+  };
+
+  const accessNotice = getProtectedSectionNotice(currentTab, currentUser?.role);
+
+  return (
+    <div className="min-h-screen bg-[#0a0c10] text-zinc-100 flex flex-row font-['Plus_Jakarta_Sans',sans-serif]">
+      {/* Studio Left Sidebar */}
+      <Sidebar
+        currentTab={currentTab}
+        setCurrentTab={handleNavigateTab}
+        onOpenAuth={handleOpenAuth}
+        onOpenUpload={handleOpenUpload}
+        isMobileOpen={isMobileMenuOpen}
+        onCloseMobile={() => setIsMobileMenuOpen(false)}
+      />
+
+      {/* Main App Workspace */}
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+        {/* TopBar */}
+        <TopBar
+          currentTab={currentTab}
+          setCurrentTab={handleNavigateTab}
+          onOpenAuth={handleOpenAuth}
+          onOpenAccountDeletion={() => setAccountDeletionOpen(true)}
+          onOpenUpload={handleOpenUpload}
+          onToggleMobileMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        />
+        <BackendStatusBanner />
+      <div aria-label="Notificaciones" className="fixed right-4 top-20 z-[100] flex w-[min(24rem,calc(100vw-2rem))] flex-col gap-2" aria-live="polite" aria-relevant="additions">
+        {notifications.map((notification) => (
+          <div
+            key={notification.id}
+            role={notification.kind === 'error' ? 'alert' : 'status'}
+            className={`flex items-start justify-between gap-3 rounded-xl border px-4 py-3 text-sm shadow-xl ${notification.kind === 'error' ? 'border-rose-400/40 bg-[#211116] text-rose-100' : 'border-emerald-400/40 bg-[#101e19] text-emerald-100'}`}
+          >
+            <span>{notification.message}</span>
+            <button type="button" onClick={() => dismissNotification(notification.id)} aria-label="Cerrar notificación" className="shrink-0 rounded p-1 hover:bg-white/10">
+              <X className="h-4 w-4" aria-hidden="true" />
+            </button>
+          </div>
+        ))}
+      </div>
+
+        {/* Dynamic Main Views Container */}
+        <main className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 pt-4 pb-28">
+          <React.Suspense fallback={<div role="status" className="p-6 text-zinc-400">Cargando sección...</div>}>
+          {authNotice && (
+            <div role="alert" className="mb-4 flex flex-wrap items-center gap-3 rounded-xl border border-amber-400/40 bg-zinc-900 p-4 text-sm text-amber-100">
+              <span>{authNotice}</span>
+              <button type="button" className="rounded-lg bg-amber-400 px-3 py-2 font-bold text-zinc-950" onClick={() => {
+                clearAuthNotice();
+                handleOpenAuth('login');
+              }}>Iniciar sesión</button>
+            </div>
+          )}
+          {paymentNotice && (
+            <div
+              role="status"
+              className="mb-4 flex items-center justify-between gap-3 rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-100"
+            >
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+                <span>{paymentNotice}</span>
+                {paymentReturnReady && currentUser?.role === 'artista' && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      handleNavigateTab('perfil');
+                      clearPaymentNotice();
+                    }}
+                    className="w-fit shrink-0 rounded-lg bg-amber-400 px-3 py-2 text-xs font-bold text-zinc-950 hover:bg-amber-300"
+                  >
+                    Ir a mis compras y descargas
+                  </button>
+                )}
+              </div>
+              <button type="button" onClick={clearPaymentNotice} aria-label="Cerrar aviso de pago">
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+          )}
+          {accessNotice && (
+            <div role="status" className="rounded-2xl border border-zinc-700 bg-zinc-900 p-6 text-zinc-200">
+              <h2 className="text-lg font-bold mb-2">{accessNotice.title}</h2>
+              <p className="text-sm text-zinc-400">{accessNotice.description}</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {accessNotice.requiresLogin && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => handleOpenAuth('login')}
+                      className="rounded-lg bg-amber-400 px-4 py-2 font-bold text-zinc-950 hover:bg-amber-300"
+                    >
+                      Iniciar sesión
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleOpenAuth('register')}
+                      className="rounded-lg border border-zinc-600 px-4 py-2 font-bold text-zinc-100 hover:bg-zinc-800"
+                    >
+                      Crear cuenta
+                    </button>
+                  </>
+                )}
+                <button
+                  type="button"
+                  onClick={() => handleNavigateTab('descubrir')}
+                  className="rounded-lg border border-zinc-600 px-4 py-2 font-bold text-zinc-100 hover:bg-zinc-800"
+                >
+                  Volver al inicio
+                </button>
+              </div>
+            </div>
+          )}
+          {(currentTab === 'descubrir' || currentTab === 'inicio') && (
+            <DiscoverPage
+              onNavigateCatalog={(resource) => handleNavigateTab('catalogo', resource)}
+              onOpenTrackDetail={handleOpenTrackDetail}
+              onOpenProducerProfile={handleOpenProducerProfile}
+            />
+          )}
+
+          {currentTab === 'catalogo' && (
+            <CatalogPage
+              onSelectResource={(resource) => handleNavigateTab('catalogo', resource === 'all' ? undefined : resource)}
+              onOpenTrackDetail={handleOpenTrackDetail}
+              onOpenProducerProfile={handleOpenProducerProfile}
+            />
+          )}
+
+          {currentTab === 'carrito' && currentUser && (
+            <CartPage
+              onNavigateCatalog={() => handleNavigateTab('catalogo')}
+              onOpenTrackDetail={handleOpenTrackDetail}
+            />
+          )}
+
+          {currentTab === 'usuarios' && (
+            <UsersCatalogPage onSelectUser={handleSelectCommunityUser} />
+          )}
+
+          {currentTab === 'sobre_nosotros' && <AboutPage />}
+
+          {/* Current Logged-in User Profile */}
+          {currentTab === 'perfil' && currentUser && (
+            currentUser?.role === 'productor' ? (
+              <ProducerProfilePage
+                initialTab="beats"
+                onOpenTrackDetail={handleOpenTrackDetail}
+                onOpenUploadModal={handleOpenUpload}
+                onEditTrack={handleEditTrack}
+              />
+            ) : (
+              <ArtistProfilePage
+                initialTab="compras"
+                onOpenTrackDetail={handleOpenTrackDetail}
+                onNavigateCatalog={() => handleNavigateTab('catalogo')}
+              />
+            )
+          )}
+
+          {/* Producer Sales View */}
+          {currentTab === 'ventas' && currentUser?.role === 'productor' && (
+            <ProducerProfilePage
+              initialTab="ventas"
+              onOpenTrackDetail={handleOpenTrackDetail}
+              onOpenUploadModal={handleOpenUpload}
+              onEditTrack={handleEditTrack}
+            />
+          )}
+
+          {/* Artist Favorites View */}
+          {currentTab === 'favoritos' && currentUser?.role === 'artista' && (
+            <ArtistProfilePage
+              initialTab="favoritos"
+              onOpenTrackDetail={handleOpenTrackDetail}
+              onNavigateCatalog={() => handleNavigateTab('catalogo')}
+            />
+          )}
+
+          {/* External Viewed Profile */}
+          {currentTab === 'perfil_externo' && viewedProfile && (
+            viewedProfile.role === 'productor' ? (
+              <ProducerProfilePage
+                producerId={viewedProfile.id}
+                onOpenTrackDetail={handleOpenTrackDetail}
+                onOpenUploadModal={handleOpenUpload}
+                onEditTrack={handleEditTrack}
+              />
+            ) : (
+              <ArtistProfilePage
+                artistId={viewedProfile.id}
+                onOpenTrackDetail={handleOpenTrackDetail}
+                onNavigateCatalog={() => handleNavigateTab('catalogo')}
+              />
+            )
+          )}
+          {currentTab === 'perfil_externo' && !viewedProfile && (
+            <div
+              role="status"
+              className="rounded-2xl border border-zinc-700 bg-zinc-900 p-6 text-zinc-200"
+            >
+              <h2 className="text-lg font-bold mb-2">
+                Perfil no disponible
+              </h2>
+              <p className="text-sm text-zinc-400">
+                No pudimos encontrar este perfil entre los usuarios cargados.
+                Comprueba el enlace y la conexión con el servidor.
+              </p>
+              <button
+                type="button"
+                className="mt-4 rounded-lg bg-amber-400 px-4 py-2 font-bold text-zinc-950"
+                onClick={() => handleNavigateTab('usuarios')}
+              >
+                Ver comunidad
+              </button>
+            </div>
+          )}
+          </React.Suspense>
+        </main>
+      </div>
+
+      {/* Track Detail Modal */}
+      <TrackDetailModal
+        trackId={selectedTrackId}
+        onClose={handleCloseTrackDetail}
+        onOpenProducerProfile={handleOpenProducerProfile}
+      />
+
+      {/* Upload Track Modal with Acoustic Analyzer Fallback */}
+      <UploadTrackModal
+        isOpen={uploadModalOpen}
+        onClose={() => setUploadModalOpen(false)}
+        trackToEdit={trackToEdit}
+      />
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={authModalOpen}
+        mode={authMode}
+        onClose={() => setAuthModalOpen(false)}
+        onSwitchMode={(mode) => setAuthMode(mode)}
+      />
+      <AccountDeletionModal
+        isOpen={accountDeletionOpen}
+        onClose={() => setAccountDeletionOpen(false)}
+      />
+
+      {/* Global Persistent Audio Player */}
+      <GlobalAudioPlayer onOpenTrackDetail={handleOpenTrackDetail} />
+    </div>
+  );
+};
